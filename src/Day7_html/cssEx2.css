@@ -1,0 +1,38 @@
+* {
+  /* 모든 글자 요소들의 색 지정 */
+  color:cadetblue;
+}
+
+h1 {
+  color: blueviolet;
+}
+
+#p1 {
+  color: brown;
+}
+
+.food {
+  color:red;
+}
+
+.product {
+  color: burlywood;
+}
+
+/* css에서는 2개이상의 단어가 합치면 - 로 합쳐줌(스네이크표기법) */
+.text-center {
+  text-align: center;
+}
+
+.text-size {
+  font-size: 1.5rem;
+}
+
+.text-red {
+  color: red;
+  filter: brightness(0.5); /* 요소의 밝기 조절 */
+}
+
+.text-blue {
+  color: blue;
+}

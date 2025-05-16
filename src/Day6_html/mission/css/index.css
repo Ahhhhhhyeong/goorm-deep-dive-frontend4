@@ -1,0 +1,87 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* 첫번째 영역: 이미지, 글 영역 정렬 */
+.testimonial {
+  background-color: #fff;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+/* 제목 영역 */
+.title {
+  text-align: center;
+}
+
+.title h3 {
+  font-weight: 400;
+}
+
+/* 이미지 + 대화박스 */
+.script-section {
+  width: 100%;
+  height: auto;
+}
+
+/* 공통부분 */
+.description {
+  position: relative;
+  width: 80%;
+  height: 120px;
+  margin: 35px auto;
+  display: flex;
+  align-items: center;
+}
+
+.description-person {
+  background-color: #fff;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  margin: 10px;
+}
+.description-person strong{
+  color:cadetblue
+}
+
+.circle-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+}
+.circle-img img {
+  object-fit: cover;
+}
+
+/* 홀수 번째 description - 이미지 왼쪽, 텍스트 오른쪽 */
+.script-section .description:nth-child(odd) .circle-img {
+  left: 0;
+}
+
+.script-section .description:nth-child(odd) .description-person {
+  left: 130px;
+}
+
+/* 짝수 번째 description - 이미지 오른쪽, 텍스트 왼쪽 */
+.script-section .description:nth-child(even) .circle-img {
+  right: 0;
+  left: auto;
+}
+
+.script-section .description:nth-child(even) .description-person {
+  right: 130px;
+  left: auto;
+}

@@ -1,0 +1,10 @@
+Git Test 진행중...
+home 서윗 home
+
+git terminal 활용
+  1. git init
+  2. git remote add origin [주소]
+  3. git add home.txt
+  4. git commit -m "깃 푸시 테스트"
+  5. git push
+  6. 확인

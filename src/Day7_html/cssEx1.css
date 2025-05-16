@@ -1,0 +1,11 @@
+body { 
+  background-color: aquamarine;
+}
+
+a {
+  /* 
+  기본적으로 웹 사이트의 기본 글자 크기 = 16px 
+  rem = 반응형 웹사이트에서 많이 사용. 배수 적용 / default = 1
+  */
+  font-size: 1.2rem; /* 1rem = 1배, 2rem = 2배 ...*/
+}

@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* menu 스타일 */
+.menu {
+  margin: 0 auto;
+  display: flex;
+  list-style: none;
+  text-align: center;
+  /* z-index: 10; */
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu-box {
+  background-color: #f5f5f5;
+  margin: 10px;
+  width: 250px;
+  /* 고정 크기 설정 */
+  box-sizing: border-box;
+  overflow: hidden;
+  /* z-index: 1; */
+}
+
+.menu-box h3 {
+  color: #333;
+  font-size: 12pt;
+  font-weight: 500;
+}
+
+.menu-box button {
+  margin-bottom: 30px;
+  font-size: 15px;
+  background-color: #243c84;
+  color: #fff;
+}
+
+.menu-box img {
+  width: 250px;
+  height: 250px;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  /* 부드럽게 */
+}
+
+/* 마우스 오버 할 때 이미지만 크게 */
+.menu-box:hover img {
+  transform: scale(1.2);
+}
+
+/* 메뉴 detail */
+.menu-detail {
+  display: none;/* 아무것도 안했을 때는 안보이게 */
+  position: absolute;
+  width: 93%;
+  height: 95%;
+  top: 0;
+  left: 9px;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: solid 1px #e7e7e7;
+  z-index: 10;
+  text-align: left;
+}
+
+/* 닫기 버튼 스타일 */
+.menu-detail .close-detail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.top-detail {
+  position: relative;
+  width: 78%;
+  margin: auto;
+
+  text-align: left;
+}
+
+.top-detail h2 {
+  font-size: 20pt;
+}
+
+.top-detail h2 span {
+  display: block;
+  font-size: 15px;
+  color: #939394;
+  font-weight: 400;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 3px;
+}
+
+.top-detail p{
+  line-height: 1.6em;
+  font-size: 13px;
+}
+
+/* detail 아래 부분 */
+.bottom-detail {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #f8f8f8;
+  padding: 14px 0;
+}
+
+.bottom-detail .detail-nutri {
+  overflow: hidden;
+  display: table;
+}
+
+.bottom-detail .detail-nutri::after {
+  content: "";
+  position: absolute;
+  border: 1px solid black;
+  height: 65px;
+  top: 14px;
+  left: 50%;
+}
+
+.bottom-detail .detail-nutri dl{
+  float: left;
+  width: 38.32%;
+  margin-left: 11.49%;
+  font-size: 12px;
+  line-height: 2em;
+}
+
+.bottom-detail .detail-nutri dl:nth-child(even) {
+  width: 42.16%;
+  margin-left: 8.01%;
+}
+
+.bottom-detail .detail-nutri dt {
+  display: inline-block;
+  font-weight: 300;
+}
+
+.bottom-detail .detail-nutri dd {
+  display: inline-block;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 알러지, 용량 정보 */
+.bottom-detail .detail-al  {
+  clear: left;
+  width: 77.3%;
+  padding: 3px 0 0;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.4em;
+  word-break: break-all;
+  font-size: 13px;
+  line-height: 2pt;
+}

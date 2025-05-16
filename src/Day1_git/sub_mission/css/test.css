@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+/* background에 이미지 넣기 */
+.menu-section {
+	width: 100vw;
+	height: auto;
+
+	background-image: url("../image/drink_visual.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+.menu-header{
+	color: white;
+	position: relative;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.menu-header p{
+	text-transform: uppercase;
+}
+
+.menu-buttons{
+	color: white;
+}
+
+.menu-buttons ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+    padding: 40px;
+}
+
+.menu-buttons li {
+    border: 1px solid white;
+	padding: 10px 80px;   
+}
+
+.menu-buttons .menu-click {
+	background-color: white;
+	color: black;
+}
+
+.menu-buttons li:hover{
+	background-color: white;
+	color: black;
+}

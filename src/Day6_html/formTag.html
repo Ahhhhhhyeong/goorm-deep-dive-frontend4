@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자와 커뮤니케이션을 위한 폼태그</title>
+  
+  <style>
+    /* 디자인을 줄때는 어떤 태그를 디자인할 지 선택! */
+    body {
+      text-align: center;
+    }
+
+    strong {
+      color: rgb(255, 0, 0); /* 글자색 변경(rgb, hex, 코드값 등 입력가능) */
+    }
+    
+    img {
+      /* 이미지를 둥글게 */
+      border-radius: 100%;
+    }
+    /*
+    div {
+      /* border= 테두리 선을 디자인하는 설정 
+      선의 굵기, 선의 종류, 선의 색상을 표현할 수 있음 
+      border: 1px solid black; 
+      /* 가운데 정렬 
+      text-align: center;
+    }*/
+  
+  </style>
+</head>
+<body>
+  <p>사용자가 입력한 데이터를 수집하기 위해서 사용</p>
+  <p><strong>Form</strong> Tag</p>
+  
+  <!-- 다양한 input type이 있음 -->
+  <h1>Form Tag 중 가장 많이 사용 하는 태그!</h1>
+  <label>글 한 줄 입력: </label><input type="text" > 
+  <input type="button" value="버튼!" >
+
+  <div>
+    <h4>내가 좋아하는 자동차 브랜드!</h4>
+    <!-- 
+      value는 타입마다 표현방법이 다름
+      - button : 버튼위에 표현
+      - checkbox : 체크 된 부분의 값
+      ---
+      checkbox는 여러개를 선택할 수 있음
+    -->
+    <input type="checkbox" value="벤츠">
+    <label>벤츠</label>
+    
+    <!-- 이미지 -->
+    <img width="200px" height="150px"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Mercedes-AMG_G_63_Genf_2018.jpg/1200px-Mercedes-AMG_G_63_Genf_2018.jpg">
+    
+    <!-- 줄바꿈 태그 -->
+    <br> 
+    <input type="checkbox" value="BMW">
+    <label>BMW</label>
+    
+    <input type="checkbox" value="페라리">
+    <label>페라리</label>
+    
+  </div>
+  <!-- radio 
+    둘 중 혹은 여러개의 버튼 중에 하나만 선택 => 그룹을 지어주어야 함
+    각각 태그들을 사용하면(name 없이) 라디오 버튼도 3개를 다 선택할 수 있음
+    그래서 그룹을 지어주어야 함 
+    그룹을 지어주는 속성 = `name` 설정
+    -->
+  <h3>radio button</h3>
+  <input type="radio" name="pay">
+  <label>카드</label>
+
+  <input type="radio" name="pay">
+  <label>무통장</label>
+  
+  <input type="radio" name="pay">
+  <label>카카오페이</label>
+  
+
+</body>
+</html>

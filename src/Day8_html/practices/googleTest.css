@@ -1,0 +1,43 @@
+
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  width: 80%;
+  height: auto;
+  margin: 10px auto;
+}
+
+header img {
+  width: 40%;
+  height: auto;
+}
+
+.search-box {
+  width: 100%;
+}
+
+.search-box ul{
+  display: flex;
+  margin: 0 auto;
+  width: 70%;
+  border: 1px solid gray;
+  border-radius: 2.5rem;
+  list-style: none;
+}
+
+.search-box li {
+  margin: 1rem;
+}
+
+.search-box input{
+  width: 46rem;
+  border: none;
+}
+
+.search-box i{
+  color: blue;
+}

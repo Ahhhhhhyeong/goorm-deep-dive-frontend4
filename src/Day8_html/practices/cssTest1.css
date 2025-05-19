@@ -1,0 +1,196 @@
+:root {
+  --bg-ad-card-color: rgb(47, 43, 36);
+  --prd-card-shop-text: rgb(121, 121, 121);
+  --prd-card-rate-color: rgb(10, 165, 255);
+  --prd-badge-special-color: rgb(255, 119, 119);
+  --prd-badge-coupon-color: rgb(255, 119, 119);
+}
+
+/* > 정렬 → 크기 → 박스 꾸미기 → 글씨 넣기 → 효과 마무리   */
+
+body {
+  margin: 0;
+}
+
+.product-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  margin: 1rem;
+}
+
+.product-list__item,
+.product-list__ad {
+  flex: 1 1 250px; /* 최소 너비 설정 */
+  box-sizing: border-box;
+}
+
+/* 상품 아이템, 광고 이미지 영역 */
+.product-card__image,
+.ad-card__image {
+  position: relative;
+  width: 100%;
+}
+
+.product-card__image img,
+.ad-card__image img{
+  display: block;
+  width:100%;  
+}
+
+.product-card__bookmark, 
+.ad-card__bookmark-icon{
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 20px;
+  padding: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.product-card__bookmark i,
+.ad-card__bookmark-icon i{
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 상품 카드 영역 스타일 */
+.product-card__price-box,
+.product-card__rating,
+.product-card__delivery-info, 
+.product-card__badges,
+.product-card__discount {
+  margin-top: 0.5rem;
+}
+
+
+/* 가게 이름 */
+.product-card__shop-name {
+  padding-top: 1rem;
+  font-size: 10pt;
+  color: var(--prd-card-shop-text);
+}
+/* 상품명 */
+.product-card__name {
+   margin: 5px 0px;
+}
+.product-card__name h3{
+  margin: 0px;
+  font-size: 12pt;
+  font-weight: 500;
+  color:var(--prd-card-shop-text);
+}
+
+/* 상품 가격 + 할인율 */
+.product-card__price-box {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.product-card__discount-rate {
+  color: var(--prd-card-rate-color);
+}
+/* 상품 별점 + 리뷰 수 */
+.product-card__rating {
+  font-size: 0.9rem;
+}
+.product-card__stars i{
+  color: var(--prd-card-rate-color);
+}
+.product-card__review-count {
+  color: var(--prd-card-shop-text);
+}
+/* 상품 배송 안내 */
+.product-card__delivery-info {
+  font-size: 0.9rem;
+}
+.product-card__deadline {
+  color: var(--prd-card-rate-color);
+}
+.product-card__badge--today .icon {
+  width: 4.6rem;
+  height: 1.1rem;
+}
+/* 상품 배찌 */
+.product-card__badge {
+  width: auto;
+  height: 1.1rem;
+  padding: 4px 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+.product-card__badge--free {
+  background-color: #ccc;
+  color: #595959;
+}
+.product-card__badge--special {
+  background-color: var(--prd-badge-special-color);
+  color: white;
+}
+
+.product-card__discount {
+  margin-top: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.product-card__badge--coupon,
+.product-card__badge--sale {
+  border: 1px solid #ccc;
+}
+.product-card__badge--coupon i{
+ color: var(--prd-badge-coupon-color);
+}
+
+/* 광고 카드 영역 스타일 */
+.product-list__ad {
+ position: relative;
+  background-color: var(--bg-ad-card-color); 
+ color: white;
+
+}
+.ad-card__shop-logo {
+  position: absolute;
+  top: 49%;
+  left: 0; 
+  width: 60px;
+  height: 60px;
+  border: 5px solid var(--bg-ad-card-color);
+  background-color: white;
+  border-radius: 100%;
+}
+.shop-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.shop-logo img {
+  max-width: 80%; 
+  max-height: 80%;
+  object-fit: contain;
+}
+/* 광고 글자 부분 */
+.ad-card__shop-info {
+  margin: 3rem 1.5rem;
+}
+.ad-card__shop-name {
+  font-size: 0.8rem;
+}
+.ad-card__live-title {
+  font-size: 1rem;
+}
+.ad-card__description {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.ad-card__more-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #6f6c6c;
+  border-radius: 100%;
+  padding: 5px 10px;
+  cursor: pointer;
+}

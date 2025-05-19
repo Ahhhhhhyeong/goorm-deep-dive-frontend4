@@ -4,7 +4,6 @@
   --check-color: green;
 }
 
-
 /* 입력가능한 input, span 색상 변경 */
 input:enabled+span {
   color: var(--enabled-color);

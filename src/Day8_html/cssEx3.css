@@ -1,0 +1,28 @@
+html {
+  font-size: 20px;
+}
+
+/* body {
+  font-size: 14px; 
+  text-align: center;
+} */
+
+/* .parents {
+  font-size: 1.2em; 
+  font-weight: bold;
+}
+
+.child {
+  font-size: 1.5em;
+  background-color: cadetblue;
+} */
+
+.parents {
+  font-size: 1rem; 
+  font-weight: bold;
+}
+
+.child {
+  font-size: 1.5rem;
+  background-color: cadetblue;
+}

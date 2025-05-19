@@ -1,0 +1,41 @@
+/* css변수 */
+/* 
+  root = 문서 최상위 
+*/
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --main-color: pink;
+  --block-color: rgb(208, 94, 82);
+}
+
+body{
+  /* 변수 활용 */
+  background-color: var(--bg-color); 
+  color: var(--text-color);
+}
+
+.inline-box{
+  background-color: var(--block-color);
+}
+
+.block-box{
+  background-color: var(--main-color);
+}
+
+/* a 요소가 방문하지 않은 링크일때 */
+a:link{color: blue;}
+/* a 요소가 방문한 링크일 때 */
+a:visited{color: green;}
+/* a 요소가 마우스 올라왔을 때 */
+a:hover{font-weight: bold;} /* 굵기 설정 */
+a:active{color: var(--block-color);}
+
+
+/* 반응형: 다크모드 */
+@media(perfers-color-shceme:dark){
+  :root{
+    --bg-color: black;
+    --text-color: white;
+  }
+}

@@ -1,0 +1,38 @@
+:root {
+  --enabled-color: blue;
+  --disabled-color: red;
+  --check-color: green;
+}
+
+
+/* 입력가능한 input, span 색상 변경 */
+input:enabled+span {
+  color: var(--enabled-color);
+}
+
+/* 입력 불가능한 input, span 색상변경 + 취소선 추가 */
+input:disabled+span {
+  color: var(--disabled-color);
+  text-decoration: line-through;
+}
+
+/* 체크된 부분 색상 변경 */
+input:checked+span {
+  color: var(--check-color);
+}
+
+
+
+/* p 요소 중에서 첫번째 자식을 선택 */
+p:first-child {
+  color: red;
+}
+
+/* 
+- p 요소 중에서 마지막 자식을 선택 
+- body 요소의 두번째 p 요소는 마지막 자식 요소가 아니다.
+- body 요소의 마지막 자식 요소는 div 요소이다. 
+*/
+p:last-child {
+  color: blue;
+}

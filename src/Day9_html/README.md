@@ -9,7 +9,7 @@
 - [반응형 레이아웃 실습](layoutEx2.html)
 - [자바스크립트 기초](jsEx1.html)
 - [오늘의 집 실습](positionEx1.html)
-![미션 사진](./img/완료화면사진1.gif.sb-244452c4-UxL8XH)
+![미션 사진](./img/완료화면사진1.gif)
 - [포지션 실습2](test.html)
 ![미션 사진](./img/완료화면사진2.png)
 

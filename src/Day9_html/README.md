@@ -1,193 +1,195 @@
-# [Day09] 25.05.20 수업내용 정리 
 
----
-## 실습 내용
-[레이아웃 실습](layoutEx1.html)
-[반응형 레이아웃 실습](layoutEx2.html)
+# 📘 [Day09] 25.05.20 수업내용 정리
 
 ---
 
-## 반응형 웹을 위한 head 설정
-1. SEO 
-= 검색엔진 최적화. 
-> 웹 사이트가 구글, 네이버 같은 검색 엔진에서 더 높은 순위에 나타나도록 웹 사이트 구조나 콘텐츠를 최적화 하는 기술! 
+## 🛠️ 실습 내용
 
-검색엔진 작동 방식 
-- 검색자가 어떤 키워드를 입력하면 관련성 높은 페이지를 순위별로 나열한다.
-- 페이지의 구조와 내용을 인덱싱합니다.
-- 구글 인터넷을 돌아다니며 웹 페이지를 크롤링
+- [레이아웃 실습](layoutEx1.html)  
+- [반응형 레이아웃 실습](layoutEx2.html)
 
-SEO를 잘 한다는 건?
-  - 검색 결과에서 상위에 노출되도록 설계했다는 뜻!
+---
 
-SEO 3가지 단계
-- 기술적 SEO: HTML, meta, 속도, 모바일 최적화 등
-- 콘텐츠 SEO: 키워드, 제목, 본문 내용의 구성
-- 외부 SEO: 다른 사이트에서 얼마나 많이 링크되는지
+## 🌐 반응형 웹을 위한 `<head>` 설정
 
-2. 파비콘
-= 타이틀 옆의 작은 아이콘
-[Google 검색 센터 파비콘 내용](https://developers.google.com/search/docs/appearance/favicon-in-search?hl=ko)
+### 1. SEO (검색엔진 최적화)
 
-3. 키워드, 내용
-- 검색 키워드 혹은 내용 
-- 메타태그 사용 시, 한 줄로 쓰는 것을 권장  
-예시 `<meta name="description" content="protfolio for software engineer">`
+> 웹사이트가 검색엔진(구글, 네이버 등)에서 더 높은 순위에 나타나도록 구조나 콘텐츠를 최적화하는 기술
 
-4. 오픈그래프 `OG(Open Graph data)`
-- SNS에 공유할 때 예브고 깔끔하게 카드형 링크 미리보기 생성
+**검색엔진 작동 방식**
+- 사용자가 키워드를 입력하면 관련성 높은 페이지를 나열
+- 페이지의 구조와 내용을 인덱싱
+- 웹페이지를 크롤링
+
+**SEO를 잘 한다는 건?**  
+→ 검색 결과에서 상위에 노출되도록 설계했다는 의미!
+
+**SEO 3단계**
+- **기술적 SEO**: HTML, 메타 태그, 속도, 모바일 최적화
+- **콘텐츠 SEO**: 키워드, 제목, 본문 구성
+- **외부 SEO**: 외부 링크 횟수
+
+---
+
+### 2. 파비콘 (Favicon)
+
+- 브라우저 탭에 표시되는 작은 아이콘  
+- [🔗 Google 검색 센터: 파비콘](https://developers.google.com/search/docs/appearance/favicon-in-search?hl=ko)
+
+---
+
+### 3. 키워드 / 설명 (Meta 태그)
+
+- 메타 태그는 검색 키워드 혹은 내용을 한 줄로 표현  
 ```html
-  <meta property="og:title" content="ahyeong 실습">
-  <meta prooperty="og:type" content="website">
-  <meta property="og:url" content="배포 후 생성된 url">
-  <meta property="og:image" content="배포 후 생성된 이미지 경로">
+<meta name="description" content="portfolio for software engineer">
 ```
 
 ---
 
-## 레이아웃
-> layout의 핵심은 block 레벨 요소들을 원하는 위치에 배치하는 것   
-> 화면이나 페이지에서 각 요소(텍스트, 이미지, 버튼 등)를 배치하는 구조를 의미함.
+### 4. 오픈그래프 (Open Graph)
 
+> SNS 공유 시 카드형 링크 미리보기 생성
 
-### 시맨틱 태그
-> 프로그래밍에서, 시맨틱은 코드 조각의 '의미'를 나타냅니다.   
-> 의미론적 요소를 나타내는 태그   
-> [mdn web docs 발췌](https://developer.mozilla.org/ko/docs/Glossary/Semantics)
+```html
+<meta property="og:title" content="ahyeong 실습">
+<meta property="og:type" content="website">
+<meta property="og:url" content="배포 후 생성된 url">
+<meta property="og:image" content="배포 후 생성된 이미지 경로">
+```
 
-시멘틱 태그 종류
-- `<article>`
-- `<aside>`
-- `<details>`
-- `<figcaption>`
-- `<figure>`
-- `<footer>`
-- `<form>`
-- `<header>`
-- `<main>`
-- `<mark>`
-- `<nav>`
-- `<section>`
-- `<summary>`
-- `<time>`
+---
 
+## 📐 레이아웃
 
-### 정렬
-1. float 
-  - 한 줄에 하나 씩 요소를 가로로 정렬하기 위해서 사용
-  - 기본적으로 `none` 
-  - 원래 이미지 주위를 텍스트로 감싸기 위해 만들어진 것
-  - float 선언된 요소 & 선언되지 않은 요소간 마진이 사라짐
-    - 해결방법 : `float:clear`
+> **레이아웃의 핵심:** Block 레벨 요소들을 원하는 위치에 배치
 
-2. position
-  - 요소 값들의 위치를 정할 수 있음
-  - top, right, bottom, left 속성이 요소를 배치할 최종 위치를 결정함
-  - 값 
-    - static (기본값) 
-      - 일반적인 문서 흐름에 따라 배치
-      - top, right, bottom, left, z-index 속성이 아무런 영향도 주지 않음
-    - relative
-      - 일반적인 문서 흐름에 따라 배치
-      - 자신을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용
-      - 오프셋이 다른 요소에 영향을 주지 않음
-      - z-index의 값이 `auto`가 아니라면 새로운 쌓임 맥락 생성
-    - absolute
-      - 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않음
-      - 부모 요소에 대해 상대적으로 배치
-      - z-index 값 순으로 쌓음
-    - fixed
-      - 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않음
-      - 대신 뷰포트의 초기 컨테이닝 블록을 기준으로 삼아 배치
-      - 부모 요소 중 `transform`, `perspective`, `filter`속성 중 어느 하나라도 `none`이 아니라면 뷰포트대신 해당 부모 요소를 컨테이닝 블록으로 삼음
-    - sticky
-      - 일반적인 문서 흐름에 따라 배치하고 테이블 관련 요소를 포함해 가장 가까운, 스크롤 되는 부모와, 표 관련 요소를 포함한 컨테이닝 블록을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용
-      - "스크롤 동작"(overflow가 hidden, scroll, auto 혹은 overlay)이 존재하는 가장 가까운 부모 요소에 달라붙으며, 사실 그 부모는 스크롤 불가하며 실제로 스크롤 가능한 부모가 따로 존재할 경우 sticky 동작을 보이지 않는 
+---
 
+### ✅ 시맨틱 태그 (Semantic Tag)
 
+> 코드의 의미를 나타내는 HTML 태그  
+> [🔗 MDN Web Docs: Semantics](https://developer.mozilla.org/ko/docs/Glossary/Semantics)
 
-## 반응형
-> 사용자가 어떤 디바이스로 웹 사이트를 방문할지 모르기 때문에 각 화면마다 웹 사이트가 잘 보일 수 있도록 만들어야 함   
-> PC(모니터)-테블릿-모바일 혼용   
+**주요 태그**
+```
+<article>, <aside>, <details>, <figcaption>, <figure>, <footer>, 
+<form>, <header>, <main>, <mark>, <nav>, <section>, <summary>, <time>
+```
 
-- `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-  - `content="width=device-width"` : 가로폭을 디바이스에 맞춤!!
-  - `initial-scale=1.0"` : 초기화면 배율을 100%로 설정
+---
 
+### 🧭 정렬
 
-### @media 
-> 반응형 웹 디자인에 사용되는 핵심 기술!!!
+#### 1. `float`
+- 요소를 가로로 정렬할 때 사용
+- 본래는 이미지 주위에 텍스트 감싸기용
+- `float`된 요소와 그렇지 않은 요소 간 **마진 문제** 발생
+  - 해결: `clear` 사용
 
-`@media` 사용 시, 조건을 써야함
-- ex `@media (조건){}`
+#### 2. `position`
+
+| 값 | 설명 |
+|--|--|
+| `static` | 기본값, 일반적인 흐름에 따름 |
+| `relative` | 원래 위치 기준으로 오프셋 이동 (영향 없음) |
+| `absolute` | 부모 요소 기준 위치, 일반 흐름에서 제거 |
+| `fixed` | 뷰포트를 기준으로 위치 고정 |
+| `sticky` | 스크롤되는 부모 기준으로 위치 고정 (조건 있음) |
+
+---
+
+## 📱 반응형 웹
+
+> 어떤 디바이스에서도 보기 좋게 만드는 것이 핵심!
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+- `width=device-width`: 디바이스 너비에 맞춤  
+- `initial-scale=1.0`: 화면 배율 100%
+
+---
+
+### 🎯 `@media` 쿼리
+
+> 반응형 웹 디자인의 핵심 기술
+
+**기본 구조**
+```css
+@media (조건) {
+  /* 스타일 */
+}
+```
+
+**조건 예시**
 
 | 조건명 | 설명 |
-| -------- | ----------|
-| max-width | 최대 너비(이하일 때 적용) |
-| min-width | 최소 너비(이상 일 때 적용) |
-| orientation | 방향(가로/세로) |
-| hover | 마우스 올릴 수 있는지 여부 (터치 디바이스) |
+|--------|------|
+| `max-width` | 최대 너비 이하 |
+| `min-width` | 최소 너비 이상 |
+| `orientation` | 방향 (가로/세로) |
+| `hover` | 마우스 오버 가능 여부 (터치 판단) |
 
-- `@media screen {}`
-  - screen : 스마트폰, pc, 테블릿
-  - not screen: 프린터로 출력할 때 
-
-- 반응형 웹 디자인은 viewport 너비(width)를 기준으로 한다. 
-
-
-- Mobile First 
-  - Application에서 가장 중요한 사이즈 = 모바일
+**사용 예시**
 ```css
-/*==========  Mobile First Method  ==========*/
-/* All Device */
-
-/* Custom, iPhone Retina : 320px ~ */
-@media only screen and (min-width : 320px) {
-
+@media only screen and (min-width: 320px) {
+  /* iPhone Retina */
 }
-/* Extra Small Devices, Phones : 480px ~ */
-@media only screen and (min-width : 480px) {
 
+@media only screen and (min-width: 480px) {
+  /* 소형 기기 */
 }
-/* Small Devices, Tablets : 768px ~ */
-@media only screen and (min-width : 768px) {
 
+@media only screen and (min-width: 768px) {
+  /* 태블릿 */
 }
-/* Medium Devices, Desktops : 992px ~ */
-@media only screen and (min-width : 992px) {
 
+@media only screen and (min-width: 992px) {
+  /* 데스크탑 */
 }
-/* Large Devices, Wide Screens : 1200px ~ */
-@media only screen and (min-width : 1200px) {
 
+@media only screen and (min-width: 1200px) {
+  /* 대형 화면 */
 }
 ```
 
+> ✅ **Mobile First** 전략: 모바일부터 먼저 설계하고 확장
 
 ---
-## JavaScript (Js)
-*JS 기본개념정도만 학습함*
-> 웹 브라우저에서 동작하는 인터프린터 방식의 프로그래밍   
-> 웹 페이지에서 동적인 동작과 로직을 추가한다.   
-> 자바스크립트는 움직임을 주는 것!!!
 
-1. html 문서 내부에서 js 사용
+## ⚙️ JavaScript (기본 개념)
+
+> 웹 페이지에 **동적인 기능**을 추가하는 언어  
+> 웹 브라우저에서 실행되는 **인터프리터 언어**
+
+---
+
+### 1. HTML 내부에서 JS 사용
+
 ```html
 <script>
- /* 행동을 하는 자바스크립트 코드 작성 */  
- console.log(document.getElementById('hello').innerHTML='HI')
+  console.log(document.getElementById('hello').innerHTML = 'HI');
 </script>
 ```
-위의 코드 행동
-1. document html 코드를 읽음
-2. getElementById()에 선언된 태그 찾기
-3. 해당 태그의 글을 바꿈
 
-2. js 파일을 별도로 만들어 사용
-> js 파일 연결 시, 최하단에 연결하는게 좋음   
+**동작 순서**
+1. 문서 읽기
+2. ID가 `'hello'`인 요소 찾기
+3. 해당 요소의 글자 바꾸기
+
+---
+
+### 2. 외부 JS 파일 연결
+
+> 파일은 보통 `</body>` 태그 **직전에** 연결
+
 ```html
 <body>
   ...
   <script src="./js/jsEx1.js"></script>
 </body>
 ```
+
+---

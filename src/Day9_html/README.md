@@ -58,6 +58,11 @@ SEO 3가지 단계
   - float 선언된 요소 & 선언되지 않은 요소간 마진이 사라짐
     - 해결방법 : `float:clear`
 
+2. position
+  - 요소 값들의 위치를 정할 수 있음
+
+
+
 ## 반응형
 > 사용자가 어떤 디바이스로 웹 사이트를 방문할지 모르기 때문에 각 화면마다 웹 사이트가 잘 보일 수 있도록 만들어야 함   
 > PC(모니터)-테블릿-모바일 혼용   
@@ -71,4 +76,55 @@ SEO 3가지 단계
 > 반응형 웹 디자인에 사용되는 핵심 기술!!!
 
 `@media` 사용 시, 조건을 써야함
-- ex) `@media 조건{}`
+- ex `@media (조건){}`
+
+| 조건명 | 설명 |
+| -------- | ----------|
+| max-width | 최대 너비(이하일 때 적용) |
+| min-width | 최소 너비(이상 일 때 적용) |
+| orientation | 방향(가로/세로) |
+| hover | 마우스 올릴 수 있는지 여부 (터치 디바이스) |
+
+- `@media screen {}`
+  - screen : 스마트폰, pc, 테블릿
+  - not screen: 프린터로 출력할 때 
+
+- 반응형 웹 디자인은 viewport 너비(width)를 기준으로 한다. 
+
+
+- Mobile First 
+  - Application에서 가장 중요한 사이즈 = 모바일
+```
+/*==========  Mobile First Method  ==========*/
+/* All Device */
+
+/* Custom, iPhone Retina : 320px ~ */
+@media only screen and (min-width : 320px) {
+
+}
+/* Extra Small Devices, Phones : 480px ~ */
+@media only screen and (min-width : 480px) {
+
+}
+/* Small Devices, Tablets : 768px ~ */
+@media only screen and (min-width : 768px) {
+
+}
+/* Medium Devices, Desktops : 992px ~ */
+@media only screen and (min-width : 992px) {
+
+}
+/* Large Devices, Wide Screens : 1200px ~ */
+@media only screen and (min-width : 1200px) {
+
+}
+```
+
+
+---
+## JavaScript (Js)
+*JS 기본개념정도만 학습함*
+> 웹 브라우저에서 동작하는 인터프린터 방식의 프로그래밍   
+> 웹 페이지에서 동적인 동작과 로직을 추가한다.   
+> 자바스크립트는 움직임을 주는 것!!!
+

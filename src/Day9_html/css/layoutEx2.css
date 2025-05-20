@@ -1,8 +1,35 @@
 /* 반응형 레이아웃 설정 실습 */
 
 /* 1. 화면 769px 이하일 때 배경색을 파란색으로 변경 */
-@media (max-width:769px) {
+/* @media (max-width:769px) {
   body{
-    background-color: blue;
+    background-color: skyblue;
+  }
+} */
+
+/* 2. 화면 500px 이하일 때 h1의 폰트사이즈를 15px로 변경 */
+/* @media (max-width:500px) {
+  h1 {
+    font-size: 15px;
+  }
+} */
+
+/* 
+screen : 스마트폰, pc, 테블릿
+not screen: 프린터로 출력할 때 
+
+반응형 웹 디자인은 viewport 너비(width)를 기준으로 한다. 
+Mobile First 
+  - Application에서 가장 중요한 사이즈 = 모바일
+
+*/
+@media screen and (min-width:769px){
+  body {
+    background-color: pink;
+  }
+}
+@media not screen and (min-width:769px) {
+  body{ 
+    background-color: gray;
   }
 }

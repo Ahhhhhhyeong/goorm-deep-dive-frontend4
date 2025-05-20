@@ -1,5 +1,4 @@
-const bookmark = document.getElementById('bookmark');
 
-bookmark.addEventListener('click', function(){
-  alert('북마크 클릭!');
-});
+function fn_click(num){
+  alert(`북마크 ${num} 번 째 클릭`);
+}

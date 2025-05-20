@@ -36,7 +36,7 @@ SEO 3가지 단계
 
 4. 오픈그래프 `OG(Open Graph data)`
 - SNS에 공유할 때 예브고 깔끔하게 카드형 링크 미리보기 생성
-```
+```html
   <meta property="og:title" content="ahyeong 실습">
   <meta prooperty="og:type" content="website">
   <meta property="og:url" content="배포 후 생성된 url">
@@ -50,6 +50,28 @@ SEO 3가지 단계
 > 화면이나 페이지에서 각 요소(텍스트, 이미지, 버튼 등)를 배치하는 구조를 의미함.
 
 
+### 시맨틱 태그
+> 프로그래밍에서, 시맨틱은 코드 조각의 '의미'를 나타냅니다.   
+> 의미론적 요소를 나타내는 태그   
+> [mdn web docs 발췌](https://developer.mozilla.org/ko/docs/Glossary/Semantics)
+
+시멘틱 태그 종류
+- `<article>`
+- `<aside>`
+- `<details>`
+- `<figcaption>`
+- `<figure>`
+- `<footer>`
+- `<form>`
+- `<header>`
+- `<main>`
+- `<mark>`
+- `<nav>`
+- `<section>`
+- `<summary>`
+- `<time>`
+
+
 ### 정렬
 1. float 
   - 한 줄에 하나 씩 요소를 가로로 정렬하기 위해서 사용
@@ -60,6 +82,27 @@ SEO 3가지 단계
 
 2. position
   - 요소 값들의 위치를 정할 수 있음
+  - top, right, bottom, left 속성이 요소를 배치할 최종 위치를 결정함
+  - 값 
+    - static (기본값) 
+      - 일반적인 문서 흐름에 따라 배치
+      - top, right, bottom, left, z-index 속성이 아무런 영향도 주지 않음
+    - relative
+      - 일반적인 문서 흐름에 따라 배치
+      - 자신을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용
+      - 오프셋이 다른 요소에 영향을 주지 않음
+      - z-index의 값이 `auto`가 아니라면 새로운 쌓임 맥락 생성
+    - absolute
+      - 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않음
+      - 부모 요소에 대해 상대적으로 배치
+      - z-index 값 순으로 쌓음
+    - fixed
+      - 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않음
+      - 대신 뷰포트의 초기 컨테이닝 블록을 기준으로 삼아 배치
+      - 부모 요소 중 `transform`, `perspective`, `filter`속성 중 어느 하나라도 `none`이 아니라면 뷰포트대신 해당 부모 요소를 컨테이닝 블록으로 삼음
+    - sticky
+      - 일반적인 문서 흐름에 따라 배치하고 테이블 관련 요소를 포함해 가장 가까운, 스크롤 되는 부모와, 표 관련 요소를 포함한 컨테이닝 블록을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용
+      - "스크롤 동작"(overflow가 hidden, scroll, auto 혹은 overlay)이 존재하는 가장 가까운 부모 요소에 달라붙으며, 사실 그 부모는 스크롤 불가하며 실제로 스크롤 가능한 부모가 따로 존재할 경우 sticky 동작을 보이지 않는 
 
 
 
@@ -94,7 +137,7 @@ SEO 3가지 단계
 
 - Mobile First 
   - Application에서 가장 중요한 사이즈 = 모바일
-```
+```css
 /*==========  Mobile First Method  ==========*/
 /* All Device */
 
@@ -128,3 +171,23 @@ SEO 3가지 단계
 > 웹 페이지에서 동적인 동작과 로직을 추가한다.   
 > 자바스크립트는 움직임을 주는 것!!!
 
+1. html 문서 내부에서 js 사용
+```html
+<script>
+ /* 행동을 하는 자바스크립트 코드 작성 */  
+ console.log(document.getElementById('hello').innerHTML='HI')
+</script>
+```
+위의 코드 행동
+1. document html 코드를 읽음
+2. getElementById()에 선언된 태그 찾기
+3. 해당 태그의 글을 바꿈
+
+2. js 파일을 별도로 만들어 사용
+> js 파일 연결 시, 최하단에 연결하는게 좋음   
+```html
+<body>
+  ...
+  <script src="./js/jsEx1.js"></script>
+</body>
+```

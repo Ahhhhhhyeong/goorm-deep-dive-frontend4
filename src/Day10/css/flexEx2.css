@@ -1,0 +1,48 @@
+body, p {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  border: 1px solid bisque;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+/* ------- */
+.box-left {
+  flex-wrap: 2;
+}
+
+.box__left__author {
+  display: flex; /* 가로정렬 */
+  justify-content: space-between; /* 안의 요소들 양 사이드로 찢어놓음 */
+}
+
+
+/* ------- */
+.box-right {
+  flex-wrap: 1;
+}
+
+.box-right div{
+  padding: 20px 30px;
+  margin: 10px;
+
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #efefef;
+}
+
+.bi{
+  cursor: pointer;
+}
+
+.bi-heart-fill{
+  color: red;
+}
+.bi-bookmark-fill {
+  color: blue;
+}

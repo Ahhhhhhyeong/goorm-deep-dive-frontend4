@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <title>인스타피드 실습</title>
+  <link rel="stylesheet" href="./css/instaEx.css">
+  <!-- <link rel="stylesheet" href="instaEx.css"> -->
+</head>
+
+<body>
+  
+  <!-- Insta main -->
+  <main id="insta__main">
+    <div class="wrap" id="wrap">
+      <div class="card__head">
+        <figure class="card__head__img">
+          <img src="https://cdn.pixabay.com/photo/2015/08/05/04/02/people-875597_960_720.jpg" alt="프로필">
+        </figure>
+        <div class="card__head__title">
+          <h5>frenchie_fry39</h5>
+          <span>Sparkle • <b>stellas_gr00v3</b></span>
+        </div>
+        <i class="bi bi-three-dots card__head__icon"></i>
+      </div>
+      <div class="card__content__img">
+        <img src="https://cdn.pixabay.com/photo/2025/05/10/15/40/bear-9591466_960_720.jpg" alt="카드이미지">
+      </div>
+      <div class="card__content__text">
+        <div class="card__content__icon ">
+          <i class="bi bi-heart icon-left" onclick="fn_click(this)"></i>
+          <i class="bi bi-chat icon-left"></i>
+          <i class="bi bi-send icon-left"></i>
+          <i class="bi bi-bookmark icon-right" onclick="fn_click(this)"></i>
+        </div>
+        <p class="text--middle"><b>kyia_kayaks</b>님 외 <b id="like_count">10명</b>이 좋아합니다</p>
+        <p class="text--small"><b>frenchie_fry39</b>이 프로젝트를 후원하게 돼서 기쁩니다!</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- popup -->
+  <div class="popup ">
+    <i class="bi bi-x-lg popup__close" onclick="popup_close(this)"></i>
+    <figure class="popup__img">
+      <img src="https://cdn.pixabay.com/photo/2015/08/05/04/02/people-875597_960_720.jpg" alt="프로필">
+    </figure>
+    <h3>이 게시물을 확인해보세요</h3>
+    <p>가입하거나 로그인하여 <b>Doe</b>님의 게시물을 확인해보세요.</p>
+    <p class="popup__caption">계속하면 Instagram <b>이용 약관</b> 및 <b>개인정보처리방침</b>에 동의하게 됩니다.</p>
+    <div class="popup__buttons">
+      <button class="popup__btn btn--bg--blue">가입하기</button>
+      <button class="popup__btn btn--bg--white">로그인 </button>
+    </div>
+  </div>
+
+  <script src="./js/instaEx.js"></script>
+  <!-- <script src="instaEx.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* popup */
+.popup {
+  width: 35rem;
+  height: 30rem;
+  position: absolute;
+  
+  top: 10%;
+  left: 20%;
+  background-color: white;
+  border-radius: 2.5rem;
+  box-shadow: 10px 5px 5px gray;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.popup__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #000;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.popup__img {
+  width: 7rem;
+  height: 7rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.popup__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.popup h3,
+p,
+b {
+  line-height: 0.1rem;
+}
+
+.popup__buttons {
+  margin-top: 2.5rem;
+}
+
+.popup__btn {
+  padding: 0.8rem 12rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 2px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* 카드부분 */
+
+#insta__main{
+  width: 100%;
+  min-height: 1000px;
+}
+
+.wrap {
+  margin: 1rem;
+  width: 30rem;
+  border : 2px solid black;
+}
+
+.card__head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__head__img {
+  /* flex-grow: 1; */
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0.5rem 1rem;
+}
+.card__head__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card__head__title {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: flex-start;
+}
+.card__head__title h5{
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card__head__icon {
+  flex-wrap: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 2rem;
+  color: #555;
+}
+
+.card__content__img {
+  width: 30rem;
+  height: 30rem;
+  overflow: hidden;
+}
+.card__content__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__content__text {
+  margin-top: 0.6rem;
+}
+
+.card__content__icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0rem 0.8rem;
+  font-size: 1.2rem;
+}
+
+.icon-left {
+  margin-right: 0.8rem;
+}
+.icon-right {
+  margin-left: auto;
+  
+}
+
+.card__content__text p {
+  line-height: 0.4rem;
+  margin-left: 0.8rem;
+}
+.text--middle {
+  font-size: 0.9rem;
+}
+.text--small {
+  font-size: 0.8rem;;
+}
+
+/* 색상 설정 */
+
+.btn--bg--blue {
+  background-color: #28a7d6;
+  color: white;
+}
+
+.btn--bg--white {
+  background-color: white;
+  color: #28a7d6;
+}
+
+
+.p-disable {
+  display: none;
+}
+
+.bi-heart-fill {
+  color: red;
+}
+.bi-bookmark-fill {
+  color: green;
+}

@@ -126,8 +126,8 @@
 ### 🏞️ CSS 이미지 핸들링
 #### object-fit / background-size 비교
 > 💡 참고:
-- object-fit은 <img>, <video>, <iframe> 같은 요소에 사용됩니다.
-- background-size는 CSS 배경 이미지에 사용됩니다.
+- object-fit은 `<img>`, `<video>`, `<iframe>` 같은 요소에 사용
+- background-size는 CSS 배경 이미지에 사용
 
 
 | 속성        | `object-fit` 동작 설명                                   | `background-size` 동작 설명                                  |

@@ -9,6 +9,7 @@
 ![포지셔닝 실습 사진](./images/positionStudy.gif)
 
 - [쿠팡장바구니 클론코딩](./BootstrapEx/coupangEx1.html)
+![쿠팡장바구니](./images/coupangStudy.gif)
 
 ---
 ## CSS 우선순위!

@@ -11,68 +11,244 @@
 </head>
 
 <body>
-
-  <section class="container cart-main">
-    <article class="cart-list">
-      <div class="card mb-3">
-        <div class="card-header">
-          <h5>로켓직구 상품</h5>
-          <p>해외직배송 20,000원 이상 무료배송</p>
-        </div>
-        <div class="row g-0">
-          <div class="col-md-1">
-            <input type="checkbox" class="form-check-input" name="product" id="1">
+  <main class="cart">
+    <section class="container cart-main">
+      <article class="cart-list">
+        <div class="card mb-3">
+          <div class="card-header cart__header">
+            <h5>로켓직구 상품</h5>
+            <p>해외직배송 20,000원 이상 무료배송</p>
           </div>
-          <div class="col-md-3">
-            <img src="../images/product1.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h5 class="card-title">상품이름 1</h5>
-              <p class="card-text"><small class="text-body-secondary">화요일 도착예정</small></p>
-              <p class="card-text"><small class="text-body-secondary">30%할인</small></p>
-              <p class="card-text"><b class="cart__card__price">4,620원</b> <span>로켓직구</span></p>
-              <p class="card-text"><small class="text-body-secondary">최대 222원 적립</small></p>
-              <p class="card-text"> 카운트 </p>
+          <div class="row g-0">
+            <div class="col-md-1 cart__check">
+              <input type="checkbox" class="form-check-input" name="productCheck" >
+            </div>
+            <div class="col-md-3 cart__image">
+              <img src="../images/product1.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">상품이름 1</h5>
+                <p class="card-text"><small class="text-body-secondary">화요일 도착예정</small></p>
+                <p class="card-text"><small class="text-body-secondary">30%할인</small></p>
+                <p class="card-text"><b class="cart__card__price">4620</b>원 <span>로켓직구</span></p>
+                <p class="card-text"><small class="text-body-secondary">최대 222원 적립</small></p>
+                <span class="card-text cart__product__num">
+                  <a href="#" class="product__minus">-</a>
+                  <span class="product-mount">1</span>
+                  <a href="#" class="product__plus">+</a>
+                </span>
+              </div>
             </div>
           </div>
+          <footer class="card-footer cart__footer">
+            <p class="card-text">
+              <small class="text-body-secondary">상품가격 <span class="cost">4620</span>원 + 배송비</small> 
+              <b><span class="ship-price">2500</span>원</b> <small class="text-body-secondary">= 주문금액 </small>
+              <b class="totalcost">7120원</b>
+            </p>
+            <a href="#" class="card-link text-decoration-none">로켓직구 상품 추가하기 ></a>
+          </footer>
         </div>
-      </div>
 
-    </article>
 
-    <article class="cart-calculat">
-      <div class="card cart__calculat__box">
-        <h5 class="card-header">주문 예상 금액</h5>
-        <div class="card-body">
-          <table class="cart__calculat__table">
-            <tr>
-              <td>총 상품 가격</td>
-              <td><span id="order-price-count">0</span>원</td>
-            </tr>
-            <tr>
-              <td>총 할인</td>
-              <td>-<span id="order-price-discount">0</span>원</td>
-            </tr>
-            <tr>
-              <td>총 배송비</td>
-              <td>+<span id="order-price-ship">0</span>원</td>
-            </tr>
-          </table>
-          <hr>
-          <p><span id="order-price-all">0</span>원</p>
-          <a href="#" class="btn btn-primary">구매하기(<span id="order-product-count">0</span>)</a>
+        <div class="card mb-3">
+          <div class="card-header cart__header">
+            <h5>로켓직구 상품</h5>
+            <p>해외직배송 20,000원 이상 무료배송</p>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-1 cart__check">
+              <input type="checkbox" class="form-check-input" name="productCheck" >
+            </div>
+            <div class="col-md-3 cart__image">
+              <img src="../images/product1.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">상품이름 1</h5>
+                <p class="card-text"><small class="text-body-secondary">화요일 도착예정</small></p>
+                <p class="card-text"><small class="text-body-secondary">30%할인</small></p>
+                <p class="card-text"><b class="cart__card__price">4620</b>원 <span>로켓직구</span></p>
+                <p class="card-text"><small class="text-body-secondary">최대 222원 적립</small></p>
+                <span class="card-text cart__product__num">
+                  <a href="#" class="product__minus">-</a>
+                  <span class="product-mount">1</span>
+                  <a href="#" class="product__plus">+</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer cart__footer">
+            <p class="card-text">
+              <small class="text-body-secondary">상품가격 <span class="cost">4620</span>원 + 배송비</small> 
+              <b><span class="ship-price">2500</span>원</b> <small class="text-body-secondary">= 주문금액 </small>
+              <b class="totalcost">7120원</b>
+            </p>
+            <a href="#" class="card-link text-decoration-none">로켓직구 상품 추가하기 ></a>
+          </footer>
         </div>
-      </div>
-    </article>
-  </section>
 
 
+        <div class="card mb-3">
+          <div class="card-header cart__header">
+            <h5>로켓직구 상품</h5>
+            <p>해외직배송 20,000원 이상 무료배송</p>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-1 cart__check">
+              <input type="checkbox" class="form-check-input" name="productCheck" >
+            </div>
+            <div class="col-md-3 cart__image">
+              <img src="../images/product1.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">상품이름 1</h5>
+                <p class="card-text"><small class="text-body-secondary">화요일 도착예정</small></p>
+                <p class="card-text"><small class="text-body-secondary">30%할인</small></p>
+                <p class="card-text"><b class="cart__card__price">4620</b>원 <span>로켓직구</span></p>
+                <p class="card-text"><small class="text-body-secondary">최대 222원 적립</small></p>
+                <span class="card-text cart__product__num">
+                  <a href="#" class="product__minus">-</a>
+                  <span class="product-mount">1</span>
+                  <a href="#" class="product__plus">+</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer cart__footer">
+            <p class="card-text">
+              <small class="text-body-secondary">상품가격 <span class="cost">4620</span>원 + 배송비</small> 
+              <b><span class="ship-price">2500</span>원</b> <small class="text-body-secondary">= 주문금액 </small>
+              <b class="totalcost">7120원</b>
+            </p>
+            <a href="#" class="card-link text-decoration-none">로켓직구 상품 추가하기 ></a>
+          </footer>
+        </div>
+
+
+        <div class="card mb-3">
+          <div class="card-header cart__header">
+            <h5>로켓직구 상품</h5>
+            <p>해외직배송 20,000원 이상 무료배송</p>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-1 cart__check">
+              <input type="checkbox" class="form-check-input" name="productCheck" >
+            </div>
+            <div class="col-md-3 cart__image">
+              <img src="../images/product1.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">상품이름 1</h5>
+                <p class="card-text"><small class="text-body-secondary">화요일 도착예정</small></p>
+                <p class="card-text"><small class="text-body-secondary">30%할인</small></p>
+                <p class="card-text"><b class="cart__card__price">4620</b>원 <span>로켓직구</span></p>
+                <p class="card-text"><small class="text-body-secondary">최대 222원 적립</small></p>
+                <span class="card-text cart__product__num">
+                  <a href="#" class="product__minus">-</a>
+                  <span class="product-mount">1</span>
+                  <a href="#" class="product__plus">+</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer cart__footer">
+            <p class="card-text">
+              <small class="text-body-secondary">상품가격 <span class="cost">4620</span>원 + 배송비</small> 
+              <b><span class="ship-price">2500</span>원</b> <small class="text-body-secondary">= 주문금액 </small>
+              <b class="totalcost">7120원</b>
+            </p>
+            <a href="#" class="card-link text-decoration-none">로켓직구 상품 추가하기 ></a>
+          </footer>
+        </div>
+
+
+        <div class="card mb-3">
+          <div class="card-header cart__header">
+            <h5>로켓직구 상품</h5>
+            <p>해외직배송 20,000원 이상 무료배송</p>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-1 cart__check">
+              <input type="checkbox" class="form-check-input" name="productCheck" >
+            </div>
+            <div class="col-md-3 cart__image">
+              <img src="../images/product1.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">상품이름 1</h5>
+                <p class="card-text"><small class="text-body-secondary">화요일 도착예정</small></p>
+                <p class="card-text"><small class="text-body-secondary">30%할인</small></p>
+                <p class="card-text"><b class="cart__card__price">4620</b>원 <span>로켓직구</span></p>
+                <p class="card-text"><small class="text-body-secondary">최대 222원 적립</small></p>
+                <span class="card-text cart__product__num">
+                  <a href="#" class="product__minus">-</a>
+                  <span class="product-mount">1</span>
+                  <a href="#" class="product__plus">+</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer cart__footer">
+            <p class="card-text">
+              <small class="text-body-secondary">상품가격 <span class="cost">4620</span>원 + 배송비</small> 
+              <b><span class="ship-price">2500</span>원</b> <small class="text-body-secondary">= 주문금액 </small>
+              <b class="totalcost">7120원</b>
+            </p>
+            <a href="#" class="card-link text-decoration-none">로켓직구 상품 추가하기 ></a>
+          </footer>
+        </div>
+
+
+
+
+
+        <footer class="card mb-3">
+          <div class="card-body cart__product__check">
+            <input type="checkbox" class="form-check-input" name="productCheckAll" id="all">
+            <p>전체선택(<span>0</span>/<span>0</span>)</p>
+            <button type="button" class="btn btn-secondary">선택삭제</button>
+            <button type="button" class="btn btn-secondary">품절/판매종료상품 전체 삭제</button>
+          </div>
+        </footer>
+      </article>
+
+      <article class="cart-calculat">
+        <div class="card cart__calculat__box">
+          <h5 class="card-header">주문 예상 금액</h5>
+          <div class="card-body">
+            <table class="cart__calculat__table">
+              <tr>
+                <td>총 상품 가격</td>
+                <td><span id="order-price-count">0</span>원</td>
+              </tr>
+              <tr>
+                <td>총 할인</td>
+                <td class="text-danger">-<span id="order-price-discount">0</span>원</td>
+              </tr>
+              <tr>
+                <td>총 배송비</td>
+                <td>+<span id="order-price-ship">0</span>원</td>
+              </tr>
+            </table>
+            <hr>
+            <p class="text-end"><span id="order-price-all">0</span>원</p>
+            <a href="#" class="btn btn-primary w-100">구매하기(<span id="order-product-count">0</span>)</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
+  <script src="../js/coupangEx1.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,10 @@
-body{
+body {
   margin: 0;
 }
 
 .wrap {
   position: relative;
+  height: 60vh;
 }
 
 .main-top {
@@ -11,43 +12,48 @@ body{
   height: 30vh;
   background-color: rgb(79, 241, 79);
 }
-.main-top__container{
+
+.main-top__container {
   display: flex;
-  justify-content: center; /* 가로 중앙 */
-  align-items: center; /* 세로 중앙 */
-  
-  height: 20vh; 
+  justify-content: center;
+  /* 가로 중앙 */
+  align-items: center;
+  /* 세로 중앙 */
+
+  height: 20vh;
 }
-.main-top__container__title{
+
+.main-top__container__title {
   flex-grow: 1;
 }
-.main-top__container__all{
-  color:white;
+
+.main-top__container__all {
+  color: white;
 }
 
 .main-cards {
   position: absolute;
   display: flex;
-  top: 15vh;
-  left: 8%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
 .cards__contents {
   position: relative;
-   
-  width: 28rem;
-  height: 18rem;
   background-color: white;
   border-radius: 1rem;
   padding: 0;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-.cards__contents img{
+.cards__contents img {
   width: 100%;
   height: 100%;
-  object-fit:contain;
+  object-fit: contain;
   display: block;
   z-index: 10;
 }
@@ -56,7 +62,6 @@ body{
   position: absolute;
   top: 1rem;
   right: 1rem;
-
   width: 4rem;
   height: 4rem;
   background-color: blue;
@@ -78,6 +83,7 @@ body{
   bottom: 1rem;
   left: 1rem;
 }
+
 .cards__contents__badge .badge {
   padding: 0.5rem 0.4rem;
 }
@@ -85,7 +91,19 @@ body{
 
 /* hover event */
 .main-top__container__all:hover,
-.cards__contents:hover
-{
+.cards__contents:hover {
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 769px) {
+  .main-cards {
+    display: block;
+    bottom: 50%;  
+    gap: 1rem;
+    width: 40vh;
+  }
+
+ 
+    
 }

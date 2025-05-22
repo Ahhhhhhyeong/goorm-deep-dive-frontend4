@@ -1,0 +1,91 @@
+body{
+  margin: 0;
+}
+
+.wrap {
+  position: relative;
+}
+
+.main-top {
+  width: 100%;
+  height: 30vh;
+  background-color: rgb(79, 241, 79);
+}
+.main-top__container{
+  display: flex;
+  justify-content: center; /* 가로 중앙 */
+  align-items: center; /* 세로 중앙 */
+  
+  height: 20vh; 
+}
+.main-top__container__title{
+  flex-grow: 1;
+}
+.main-top__container__all{
+  color:white;
+}
+
+.main-cards {
+  position: absolute;
+  display: flex;
+  top: 15vh;
+  left: 8%;
+  gap: 1rem;
+}
+
+.cards__contents {
+  position: relative;
+   
+  width: 28rem;
+  height: 18rem;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0;
+  overflow: hidden; 
+}
+
+.cards__contents img{
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+  display: block;
+  z-index: 10;
+}
+
+.cards__contents__tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  width: 4rem;
+  height: 4rem;
+  background-color: blue;
+  border-radius: 50%;
+}
+
+.cards__contents__tag span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  font-size: 0.7rem;
+  color: silver;
+}
+
+.cards__contents__badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+.cards__contents__badge .badge {
+  padding: 0.5rem 0.4rem;
+}
+
+
+/* hover event */
+.main-top__container__all:hover,
+.cards__contents:hover
+{
+  cursor: pointer;
+}

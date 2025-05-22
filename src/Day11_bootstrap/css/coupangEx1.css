@@ -1,0 +1,22 @@
+
+.cart-main {
+  display: flex;
+}
+
+.cart-list {
+  flex-grow: 8;
+}
+.card-header {
+  display: flex;
+}
+
+.cart-calculat {
+  margin-left: 2.5rem;
+  flex-grow: 2;
+  height: 100%;
+}
+.cart__calculat__box {
+  position: sticky;
+}
+
+

@@ -1,0 +1,56 @@
+
+/* 서브페이지 메뉴 */
+.cas__menu {
+  margin-top: 3vh;
+}
+.cas__menu__row {
+  list-style: none;
+}
+.cas__menu__col {
+  border-top: 1px solid var(--none-active-color);
+  padding: 1vh 0vh;
+  font-weight: 400;
+  
+}
+.menu-active {
+  border-top: 2px solid var( --font-lg-color);
+  font-weight: 600;
+  color: var(--font-lg-color);
+}
+.cas__menu__col a{
+  text-decoration-line: none;
+  color: var(--none-active-color);
+}
+
+/* 로그인 */
+.cas__main__login {
+  width: 60vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8vh
+}
+
+.login__form {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.cas__main__login h2 {
+  color: var(--font-lg-color);
+  font-weight: 400;
+  font-size: 4vh;
+}
+.login__form__save{
+  text-align: left;
+  margin: 1.4vh 0vh;
+}
+
+/* 버튼 */
+.submit-btn {
+  width: 100%;
+  background-color: var(--contents-main-color);
+  color: white;
+  padding: 1vh;
+}

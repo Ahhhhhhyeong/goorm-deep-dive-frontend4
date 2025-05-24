@@ -1,0 +1,13 @@
+.alert-box {
+  background-color: skyblue;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  /* display: none; */
+}
+
+/* 기본적인 UI 순서
+1. html css를 미리 디자인 해 놓음 
+2. 숨겨야할지, 보여야할지 
+3. 버튼을 누르거나 할 경우 UI를 보여달라고 자바스크립트 코드 작성
+*/

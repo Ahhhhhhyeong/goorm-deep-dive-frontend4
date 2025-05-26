@@ -9,9 +9,10 @@
   - [html](./html/javascriptEx2.html), [js](./js/javascriptEx2.js)
 - 게시판 실습
   - [html](./html/testEx1.html), [js](./js/testEx1.js)
-
+  ![게시판 실습](./img/게시판.png)
 - Todo 실습
   - [html](./html/testEx2.html), [js](./js/testEx2.js)
+  ![Todo 실습](./img/투두리스트.png)
 
 
 ---

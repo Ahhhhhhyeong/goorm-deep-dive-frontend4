@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>바닐라JS 게시판</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f9f9f9;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      color: #333;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .delete-btn {
+      margin-top: 10px;
+      background: #d11a2a;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📝 게시판</h2>
+
+  <input id="title" placeholder="제목을 입력하세요">
+  <textarea id="content" rows="4" placeholder="내용을 입력하세요"></textarea>
+  <button id="addBtn">등록</button>
+
+  <ul id="postList"></ul>
+
+  <!-- 자바스크립트 외부 파일로 분리 -->
+  <script src="../js/testEx1.js"></script>
+</body>
+</html>

@@ -7,6 +7,12 @@
   - [html](./html/javascriptEx1.html), [js](./js/javascriptEx1.js)
 - Js로 HTML 안에 요소 만들기
   - [html](./html/javascriptEx2.html), [js](./js/javascriptEx2.js)
+- 게시판 실습
+  - [html](./html/testEx1.html), [js](./js/testEx1.js)
+
+- Todo 실습
+  - [html](./html/testEx2.html), [js](./js/testEx2.js)
+
 
 ---
 
@@ -194,3 +200,21 @@ button.addEventListener('click', function() {
 - `keydown` : 키를 눌렀을 때  
 - `blur` : 포커스가 사라질 때  
 - `focus` : 포커스가 생길 때
+
+---
+
+### ⚠️ 에러사항
+> `<input type="text" >`에 엔터키를 누르는 동작이랑 버튼을 누르는 동작을 같이 실행하고 싶어서 위에 `addEventListener('keydown', ())`을 주었는데,    
+> 한글을 사용했을 때 keydown 이벤트가 2번 발생을 하는 이슈가 있었다!
+
+#### 원인
+- 찾아보니, 한글이 자음과 모음이 합쳐지는 과정에서 입력중임을 나타내는 `isComposing`상태가 된다.
+- 이 상태에서 다른 키(엔터, 컨트롤 등)가 입력되면, 한 글자로 인식이 되어 `enter`가 두 번 동작하게 된다.
+
+#### 해결방법
+- `isComposing` 상태일 때 무시하는 코드를 한 줄 추가 해주었다.
+```js
+if(event.isComposing) return;
+```
+
+---

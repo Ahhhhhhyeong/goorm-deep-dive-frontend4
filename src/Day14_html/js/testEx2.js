@@ -169,15 +169,17 @@ function addComment(userName, userImg, commentText, date, replies, index) {
         replyForm.remove();
         repliesBtn.dataset.open = "false";
 
-        removeReplies(commentTextDiv); // 기존 답글 제거
-        repliesListAppend(comments[index].replies, commentTextDiv); // 새 답글 렌더링
-
+        removeReplies(commentTextDiv); // 기존 답글 제거        
         // 기존 replyButton 찾아서 텍스트만 업데이트
         const replyButton = commentTextDiv.querySelector(".replyButton");
         if (replyButton) {
           const countSpan = replyButton.querySelector("span");
           countSpan.innerText = ` 답글 ${comments[index].replies.length}`;
+        } else { //button이 없는경우는 새로 만들어지는 경우!!!
+          isReplyAppend(commentTextDiv, comments[index].replies, true);
         }
+        repliesListAppend(comments[index].replies, commentTextDiv); // 새 답글 렌더링
+
       });
 
       const buttonReplyCancel = document.createElement("button");

@@ -41,7 +41,7 @@ for(let i = 0; i < productList.length; i++){
   const cardImg = document.createElement('img');
   const cardBody = document.createElement('div');
   
-  card.className = 'card';
+  card.className = 'prd-card';
   cardImg.className = 'card-img-top';
   cardBody.className = 'card-body';
 

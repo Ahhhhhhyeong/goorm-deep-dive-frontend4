@@ -1,0 +1,52 @@
+/* 아바타 이미지 */
+.avaterImg {
+  width: 40px; 
+  height: 40px; 
+  background: #ccc;
+}
+.avater__channer{
+  width: 48px; 
+  height: 48px; 
+  background: #ccc;
+}
+.avaterImg__reply{
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+}
+
+/* 각종 버튼들 */
+.btn-group {
+  border-radius: 20vh;
+  overflow: hidden; /*자식요소들 넘치지않게*/
+}
+.btn-light{
+  background-color: #efefef;
+}
+.btn-link{
+  padding: 0;
+  text-decoration: none; 
+}
+
+/* 영상 설명란 */
+.video__section__notice{
+  background-color: #efefef;
+  border-radius: 2vh;
+  padding: 1.6vh;
+}
+
+/* 코멘트 */
+.commenet__List {
+  margin: 10px;
+}
+
+/* 답글 부분 */
+.comment__section__replies__form, .comment__section__replies__list {
+  margin-top: 1vh;
+  width:98%;
+}
+
+/* 요소 숨기기 */
+.display-none {
+  display: none;
+}

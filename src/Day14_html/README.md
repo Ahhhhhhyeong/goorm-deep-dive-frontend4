@@ -5,9 +5,12 @@
 - [오브젝트 타입 실습](./js/objectEx1.js)
 - [오브젝트 객체 생성 및 화면 출력](./js/objectEx2.js)
 - [배열 안에 오브젝트 객체 생성](./js/objectEx3.js)
-- [상품 카드 진열 실습](./js/testEx1.js)
-  - ![실습1 사진](./img/실습1.png)
-
+- 상품 카드 진열 실습
+  - [js파일](./js/testEx1.js) / [html파일](./objectEx/testEx1.html)
+  - ![실습1 사진](./img/실습_object객체_여러개표출.png)
+- [유튜브 댓글 실습](./js/testEx2.js)
+  - [js파일](./js/testEx2.js) / [html파일](./objectEx/testEx2.html)
+  - ![유튜브 댓글 실습]()
 
 ---
 ## Object Type

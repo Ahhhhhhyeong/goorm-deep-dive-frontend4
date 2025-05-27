@@ -1,8 +1,19 @@
-.card-group{
-  margin: 3vh;
-  gap: 3vh;
+.prd__groups{
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  gap: 3vh; 
 }
 
 .badge {
   border: 1px solid red;
+}
+
+.prd-card {
+  border: 1px solid #efefef;
+  border-radius: 1vh;
+}
+
+.card-body {
+  padding: 1vh;
 }

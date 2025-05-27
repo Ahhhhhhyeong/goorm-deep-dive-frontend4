@@ -1,0 +1,8 @@
+.card-group{
+  margin: 3vh;
+  gap: 3vh;
+}
+
+.badge {
+  border: 1px solid red;
+}

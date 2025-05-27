@@ -26,3 +26,31 @@ productList.appendChild(div2);
 
 
 // 반복문
+
+
+
+let fruits = [];
+fruits.push('오렌지');
+fruits.push('사과'); // ['오렌지','사과']
+
+// 제일 앞에 있는 요소를 제거!!!
+fruits.shift(); // ['사과']
+
+console.log(fruits);
+
+//실생활 예
+// 식당 웨이팅
+let waiting = [];
+waiting.push('지수');
+waiting.push('로제');
+waiting.push('제니');
+waiting.push('리사');
+
+let stack = [];
+stack.push('구글');
+stack.push('네이버');
+stack.push('쿠팡');
+console.log(stack.pop());
+
+
+

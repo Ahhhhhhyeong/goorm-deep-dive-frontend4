@@ -10,7 +10,7 @@
   - ![실습1 사진](./img/실습_object객체_여러개표출.png)
 - [유튜브 댓글 실습](./js/testEx2.js)
   - [js파일](./js/testEx2.js) / [html파일](./objectEx/testEx2.html)
-  - ![유튜브 댓글 실습]()
+  - ![유튜브 댓글 실습](./img/실습_댓글입력_표출.gif)
 
 ---
 ## Object Type

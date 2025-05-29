@@ -1,6 +1,6 @@
 // jqueryEx2.js
 
-$("img").width("250").height("300");
+$('img').width('250').height('300');
 
 /*
 애니메이션을 자동으로 만들어준 함수들
@@ -51,22 +51,27 @@ $("button").on({
 //------------------------------------------//
 
 //1 이미지 숨기기/보이기
-$("#btnFade").on("click", function () {
-  console.log("fade 버튼 클릭!!");
-  $("#fadeInOut").fadeOut(2000).fadeIn(2000);
+$('#btnFade').on('click', function () {
+  console.log('fade 버튼 클릭!!');
+  $('#fadeInOut').fadeOut(2000).fadeIn(2000);
 });
 
 //2 이벤트 확인 => 텍스트 출력
-$("#btnText").on("click", function () {
-  console.log("텍스트 출력 버튼 클릭!!");
-  $("#evnetText").append("🖱️이걸루 버튼 클릭!");
+$('#btnText').on('click', function () {
+  console.log('텍스트 출력 버튼 클릭!!');
+  $('#evnetText').append('<p>🖱️이걸루 버튼 클릭!</p>');
 });
 
 //3 이미지 슬라이드
-$("#btnSlide").on("click", function () {
-  console.log("이미지슬라이드 버튼 클릭!!!");
-  $("#imgSlide").slideUp(2000).slideDown(2000);
+$('#btnSlide').on('click', function () {
+  console.log('이미지슬라이드 버튼 클릭!!!');
+  $('#imgSlide').slideUp(2000).slideDown(2000);
 });
 
 //4 버튼 배경색 바꾸기!
-$(".color-btn").css();
+let colorList = ['red', 'orange', 'yellow', 'green'];
+$('.color-btn').each(function (index, element) {
+  //여기서나오는 element는 jquery DOM객체가 아님!!!
+  //일반 DOM객체이기 때문에 javascript 코드로 작성해야함!
+  element.style.backgroundColor = colorList[i];
+});

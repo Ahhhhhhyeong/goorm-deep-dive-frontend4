@@ -1,0 +1,33 @@
+div {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: lightgray;
+  border: 1px solid #efefef;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem;
+}
+button {
+  margin-top: 0.7rem;
+}
+.box {
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+#box1 {
+  background-color: lightblue;
+}
+#redBox {
+  background-color: crimson;
+}
+#box2 {
+  background-color: lightcoral;
+}
+#text {
+  position: relative;
+  top: 200px;
+}

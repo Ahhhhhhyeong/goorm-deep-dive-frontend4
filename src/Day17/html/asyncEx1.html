@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비동기 실습</title>
+    <link rel="stylesheet" href="../css/animateEx1.css" />
+  </head>
+  <body>
+    <!-- 비동기 (asynchronous) 
+      - 작업이 끝날 때 까지 기다리지 않고 다음 작업을 먼저 실행하는 방식
+      - js는 기본적으로 한 줄 씩 순서대로 실행을 한다 (= 단일 스레드)
+      - 
+    -->
+    <h1>비동기 사용해서 늘려보자!</h1>
+
+    <!-- 프로그래스바(진행 바) : 다운로드 하거나 진행률이 올라가는 애니메이션 
+                            왼쪽에서 오른쪽으로 bar가 차오르는 효과! -->
+    <div id="barMain">
+      <!-- 실제 진행바가 채워지는 모습을 갖는 div가 필요 -->
+      <div id="bar">0%</div>
+    </div>
+    <button id="fillBtn">Progress Start</button>
+
+    <!-- jquery -->
+    <script src="../jquery/jquery-3.7.1.js"></script>
+    <!-- my js -->
+    <script src="../js/asyncEx1.js"></script>
+  </body>
+</html>

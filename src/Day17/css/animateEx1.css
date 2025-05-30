@@ -1,0 +1,43 @@
+/* 중복된 코드를? 쓴다?
+  - css가 중복이 되면 코드의 효율성이 떨어진다.
+  - 중복되는 코드들을 묶어서 하나의 css를 설정해준다!
+  !!상속(css도 상속 개념이 있다!)!!
+*/
+div {
+  position: relative; /*jquery에서 애니메이션 효과를 넣을때 포지션을 잡아주어야한다!!!!*/
+  width: 100px;
+  height: 100px;
+  margin: 2rem 0rem;
+  left: 0;
+  text-align: center;
+}
+
+#box1 {
+  background-color: aquamarine;
+}
+
+#box2 {
+  background-color: crimson;
+}
+
+#box3 {
+  background-color: thistle;
+}
+
+#loopText {
+  width: 300px;
+  font-weight: bold;
+}
+
+#barMain {
+  /* barMain은 웹 브라우저를 기준으로 너비를 잡겟음! */
+  width: 100vw;
+  height: 50px;
+  border: 1px solid gray;
+}
+#bar {
+  margin: 0;
+  width: 10px;
+  height: 100%;
+  background-color: lightpink;
+}

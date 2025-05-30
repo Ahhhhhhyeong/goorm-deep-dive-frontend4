@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이션 효과 실습</title>
+    <link rel="stylesheet" href="../css/animateEx1.css" />
+  </head>
+  <body>
+    <h1>제이쿼리로 애니메이션 효과!</h1>
+
+    <!-- 프로그래스바(진행 바) : 다운로드 하거나 진행률이 올라가는 애니메이션 
+                            왼쪽에서 오른쪽으로 bar가 차오르는 효과! -->
+    <div id="barMain">
+      <!-- 실제 진행바가 채워지는 모습을 갖는 div가 필요 -->
+      <div id="bar">0%</div>
+    </div>
+    <button id="fillBtn">Progress Start</button>
+
+    <!-- 무한 반복하는 애니메이션 : 글자 깜빡이기 -->
+    <div id="loopText">😎사장님이 미쳤어요😎</div>
+
+    <h4>버튼을 클릭하면 box를 움직이기!</h4>
+    <!-- 박스 위치 이동 -->
+    <div id="box1"></div>
+    <button id="btnMove">움직이기</button>
+
+    <!-- 버튼을 클릭함녀 박스2 확대 -->
+    <div id="box2"></div>
+    <button id="btnGrow">확대하기</button>
+
+    <!-- 박스 희미하게 -->
+    <div id="box3"></div>
+    <button id="btnFade">투명하게</button>
+
+    <!-- jquery -->
+    <script src="../jquery/jquery-3.7.1.js"></script>
+    <!-- my js -->
+    <script src="../js/animateEx1.js"></script>
+  </body>
+</html>

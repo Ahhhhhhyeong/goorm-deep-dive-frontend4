@@ -1,14 +1,12 @@
 //jquery 바꿔보기!
 // const tabBtn = document.querySelectorAll(".tab-button");
 // const tabContent = document.querySelectorAll(".tab-content");
-const tabBtn = $(".tab-button");
-const tabContent = $(".tab-content");
-console.log(tabBtn);
 // foreach 동작하는 자료형이 따로 있다!
-[...tabBtn].forEach((btn, index) => {
+/*
+tabBtn.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     //버튼 = isClick /탭 컨텐츠 = isShow
-    [...tabContent].forEach((content, i) => {
+    tabContent.forEach((content, i) => {
       tabBtn[i].classList.remove("isClick");
       content.classList.remove("isShow");
     });
@@ -16,7 +14,7 @@ console.log(tabBtn);
     tabContent[index].classList.add("isShow");
   });
 });
-
+*/
 /**
  * jQuery로 불러온 값을 그대로 forEach를 사용하니 아래와 같은 에러가떴다.
     Uncaught TypeError: tabContent.forEach is not a function
@@ -28,6 +26,12 @@ console.log(tabBtn);
   배열.each() => 제이쿼리에서 foreach문 사용
  */
 // 아래와 같이 쓸 수 있다!!!
-$.each(tabBtn, function (index, value) {
-  console.log(`${index} : ${value}`);
+$('.tab-button').each(function (index, btn) {
+  $(btn).on('click', function () {
+    $('.tab-button').removeClass('isClick');
+    $('.tab-content').removeClass('isShow');
+
+    $(btn).addClass('isClick');
+    $('.tab-content').eq(index).addClass('isShow');
+  });
 });

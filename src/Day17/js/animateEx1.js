@@ -87,7 +87,7 @@ $('#fillBtn').click(function () {
 */
 $('#fillBtn').click(() => {
   const $bar = $('#bar');
-
+  $bar.width('0%').text('0%');
   $bar.animate(
     {
       width: '80%',
@@ -99,6 +99,7 @@ $('#fillBtn').click(() => {
         $bar.text(Math.floor(per) + '%');
       },
       complete: function () {
+        $bar.text('80%');
         console.log('끝!!!');
       },
     }

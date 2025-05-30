@@ -2,6 +2,7 @@ $(function () {
   $('#redBox').hide();
 });
 
+//1
 $('#textBtn').click(() => {
   $('#text').animate(
     {
@@ -10,12 +11,13 @@ $('#textBtn').click(() => {
     800
   );
 });
+
+//2
 $('#colorBtn').click(() => {
   console.log('click');
   // $('#box1').animate(
   //   {
-  //     /*backgroundColor: 'red',
-  //  //jQuery UI없이 애니메이션에서 색상 변경이 안됨...*/
+  //     /*backgroundColor: 'red', //jQuery UI없이 애니메이션에서 색상 변경이 안됨...*/
   //   },
   //   2000
   // );
@@ -24,9 +26,11 @@ $('#colorBtn').click(() => {
   });
 });
 
+//3
 $('#listBtn').click(() => {
   let food = ['🍛', '🌭', '🍔'];
   let delay = 0;
+
   food.forEach((item, i) => {
     setTimeout(() => {
       let $li = $('<li>').text(item).hide();
@@ -37,6 +41,7 @@ $('#listBtn').click(() => {
   });
 });
 
+//4
 $('#popBtn').click(() => {
   $('#box2')
     .animate(
@@ -55,6 +60,7 @@ $('#popBtn').click(() => {
     );
 });
 
+//5
 $('#clearBtn').click(() => {
   $('#hideText').animate({ opacity: 0 }, 1000);
 });

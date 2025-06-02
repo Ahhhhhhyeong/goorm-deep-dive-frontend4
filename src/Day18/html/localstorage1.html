@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로컬 스토리지</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>로컬 스토리지!</h1>
+
+    <!-- 저장을 누르면 아이디를 저장 -->
+    <button onclick="save()">저장</button>
+    <!-- 불러오기를 누르면 아이디를 저장소에서 불러와서 팝업창(alert)창에 띄우기 -->
+    <button onclick="load()">불러오기</button>
+
+    <h4>패스워드 저장하기</h4>
+    <input type="text" id="pwInput" placeholder="비밀번호" />
+    <button onclick="pwSave()">비밀번호 저장</button>
+    <button onclick="pwLoad()">비밀번호 불러오기</button>
+
+    <!-- 패스워드 출력! -->
+    <p id="result"></p>
+
+    <!-- 3초 있다가 자동으로 저장하는 코드 작성
+     input 이용해서 입력(이메일)
+     입력 후 버튼을 클릭하면 3초 후 자동으로 로컬 스토리지에 저장된다!
+     alert 저장 완료 출력!
+     -->
+    <h3>3초 후 이메일을 자동저장</h3>
+    <input type="email" id="email" placeholder="email입력" />
+    <button onclick="saveEmail()">3초 후 email 저장</button>
+
+    <!-- date()
+     현재 시간을 표시! 실시간으로 표시하기:)
+     -->
+    <h3>현재 시간 표시</h3>
+    <p id="clock">시간 로딩 중...</p>
+
+    <!-- 내가만든 js -->
+    <script src="../js/localstroage1.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* 스타벅스 헤더 */
+.starbucks-header {
+  width: 100%;
+  height: 10rem;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.header__logo {
+  height: 75px;
+  top: 22px;
+  width: 75px;
+  z-index: 12;
+}
+.header__logo a {
+  background: url('../img/logo.png');
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  text-indent: -20000px;
+  width: 100%;
+}

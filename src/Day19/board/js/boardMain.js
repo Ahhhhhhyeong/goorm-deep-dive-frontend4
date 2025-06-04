@@ -18,13 +18,23 @@ const queueDeleteBtn = document.getElementById('btnDeleteQueue');
 const stackList = document.getElementById('postList');
 const queueList = document.getElementById('queueList');
 
+//처음 시작될 때, 로컬스토리지에 저장된 게시글 보이기
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('loading!');
+  const queue = Array(JSON.parse(localStorage.getItem('queue'))) || [];
+  const stack = Array(JSON.parse(localStorage.getItem('stack'))) || [];
+
+  if (queue.length > 0) renderBoard(queueList, queue, 'queue');
+  if (stack.length > 0) renderBoard(stackList, stack, 'stack');
+});
+
 //stack
 postBtn.addEventListener('click', () => {
   addBoardItems('title', 'content', 'stack');
 });
 
 deleteBtn.addEventListener('click', () => {
-  deleteBoard(stackList, stackBoard, 'stack');
+  deleteBoard(stackList, 'stack');
 });
 
 // queue
@@ -33,11 +43,10 @@ queuePostBtn.addEventListener('click', () => {
 });
 
 queueDeleteBtn.addEventListener('click', () => {
-  deleteBoard(queueList, queueBoard, 'queue');
+  deleteBoard(queueList, 'queue');
 });
 
 //-----------------------------------------------------//
-
 /** addBoardItems(titleId, contentId, type)
  * : 글 올리기 버튼 클릭!
  * titleId : 요소 id 값
@@ -46,7 +55,7 @@ queueDeleteBtn.addEventListener('click', () => {
  */
 function addBoardItems(titleId, contentId, type) {
   //board 찾기
-  const board = type === 'stack' ? stackBoard : queueBoard;
+  //const board = type === 'stack' ? stackBoard : queueBoard;
   const boardList = type === 'stack' ? stackList : queueList;
   //값 board추가
   const title = document.getElementById(titleId);
@@ -55,16 +64,30 @@ function addBoardItems(titleId, contentId, type) {
     { el: title, label: '제목' },
     { el: content, label: '내용' },
   ];
+
   //예외처리
-  if (toCheck) {
-    board.push({
-      id: board.length + 1,
+  if (isValidInput(toCheck)) {
+    //로컬스토리지 업로드?
+    //값이 덮어써짐!!!!
+    //로컬스토리지의 기존 값을 배열로 불러와서 -> 배열에 추가 -> 저장
+    //1. localStorage 값 불러오기(만약 없는경우 [] 선언)
+    const storedData = JSON.parse(localStorage.getItem(type)) || [];
+
+    const newItem = {
+      id: storedData.length + 1,
       title: title.value,
       content: content.value,
       date: nowDate(),
-    });
+    };
+    //board.push(newItem);
 
-    renderBoard(boardList, board, type);
+    //2. 배열에 추가 하고 저장
+    storedData.push(newItem);
+    localStorage.setItem(type, JSON.stringify(storedData));
+    const storageBoard = Array(JSON.parse(localStorage.getItem(type)));
+
+    //board 렌더링
+    renderBoard(boardList, storageBoard, type);
     //초기화
     title.value = '';
     content.value = '';
@@ -78,14 +101,15 @@ function addBoardItems(titleId, contentId, type) {
  * type : 어떤 타입인지 분기
  */
 function renderBoard(postList, board, type) {
+  //console.log(board[0]);
   postList.innerHTML = '';
   if (board.length === 0) {
     postList.appendChild(createEmptyMessage());
     return;
   }
-
   //3항연산자: type이 'stack'일 때, 리버스 아닐 땐 리버스하지 않기!
-  let items = type === 'stack' ? [...board].reverse() : [...board];
+  let items = type === 'stack' ? [...board[0]].reverse() : [...board[0]];
+  //console.log(items);
 
   items.forEach((post) => {
     const postDiv = appendPostElement(post);
@@ -129,8 +153,13 @@ function createEmptyMessage() {
   return noPost;
 }
 
-/** */
-function deleteBoard(boardList, board, type) {
+/** deleteBoard(boardList, type)
+ * : 보드 내용 삭제
+ * boardList : 부모요소
+ * type : stack / queue 중 1개
+ */
+function deleteBoard(boardList, type) {
+  const board = JSON.parse(localStorage.getItem(type)) || [];
   //예외처리
   if (board.length === 0) {
     alert('삭제 할 요소가 없습니다');
@@ -139,7 +168,10 @@ function deleteBoard(boardList, board, type) {
   //3항 연산자 : 타입이 스택일 때 = pop() / 아닐때 shift()
   type === 'stack' ? board.pop() : board.shift();
 
-  renderBoard(boardList, board, type);
+  //삭제한 내용 다시 입력
+  localStorage.setItem(type, JSON.stringify(board));
+
+  renderBoard(boardList, Array(board), type);
   alert('삭제되었습니다.');
 }
 
@@ -160,7 +192,8 @@ function isValidInput(input) {
   return true;
 }
 
-/** nowDate(): 현재 날짜+시간 구하는 함수 */
+/** nowDate()
+ * : 현재 날짜+시간 구하는 함수 */
 function nowDate() {
   const date = new Date();
   let dateString = `${date.getFullYear()}/${

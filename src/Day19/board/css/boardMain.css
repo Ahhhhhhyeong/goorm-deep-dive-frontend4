@@ -1,0 +1,81 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background: #fafafa;
+  color: #333;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.container {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 1rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.input-group {
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.buttons {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+.buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+.btn-post {
+  background-color: #4caf50;
+}
+.btn-delete {
+  background-color: #f44336;
+}
+.post-list {
+  margin-top: 1rem;
+}
+.post {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75rem 0;
+}
+.post:last-child {
+  border-bottom: none;
+}
+.post-title {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.post-content {
+  margin-left: 0.5rem;
+}
+.post-date {
+  text-align: right;
+  font-size: 10pt;
+}
+.no-posts {
+  text-align: center;
+  color: #888;
+  margin-top: 1rem;
+}

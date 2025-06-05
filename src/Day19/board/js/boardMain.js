@@ -60,6 +60,10 @@ function addBoardItems(titleId, contentId, type) {
   //값 board추가
   const title = document.getElementById(titleId);
   const content = document.getElementById(contentId);
+  // const [titleEl, contentEl] = [titleInputId, contentInputId].map((id) =>
+  //   document.getElementById(id)
+  // );
+
   const toCheck = [
     { el: title, label: '제목' },
     { el: content, label: '내용' },
@@ -80,7 +84,8 @@ function addBoardItems(titleId, contentId, type) {
       date: nowDate(),
     };
     //board.push(newItem);
-
+    //key 이름을 type_id로 나누어 여러개 저장?
+    //Key = type+id+ Date().now;
     //2. 배열에 추가 하고 저장
     storedData.push(newItem);
     localStorage.setItem(type, JSON.stringify(storedData));
@@ -157,6 +162,7 @@ function createEmptyMessage() {
  * : 보드 내용 삭제
  * boardList : 부모요소
  * type : stack / queue 중 1개
+ * const STACK = 'stack'; const QUEUE = 'queue';
  */
 function deleteBoard(boardList, type) {
   const board = JSON.parse(localStorage.getItem(type)) || [];
@@ -179,7 +185,9 @@ function deleteBoard(boardList, type) {
  * : 입력값 유효성 검사
  * el : id값으로 찾아온 요소
  * label : 어떤 요소인지 설명
- * trim() : 문자의 공백을 제거
+ * trim() : 문자의 공백을 제거 : 앞, 뒤부분 공백 제거!
+ * replace(): 안쪽 공백도 제거가능
+ * 매개변수 명을 직관적으로!
  */
 function isValidInput(input) {
   for (const field of input) {

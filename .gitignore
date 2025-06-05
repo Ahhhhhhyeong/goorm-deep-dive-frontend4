@@ -1,6 +1,7 @@
 # VSCODE
 .DS_Store
 package.json
+.vscode
 
 */tokens/*
 */backup/*

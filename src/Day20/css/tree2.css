@@ -1,0 +1,46 @@
+/* 파일명: tree2.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node {
+  width: 30px;
+  padding: 15px 30px;
+  background-color: white;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  position: relative;
+}
+
+.children-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.children {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin-top: 30px;
+  position: relative;
+}

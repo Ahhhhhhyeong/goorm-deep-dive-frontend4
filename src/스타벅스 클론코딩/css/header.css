@@ -1,25 +1,124 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-/* 스타벅스 헤더 */
+/* 스타벅스 헤더 전체 */
 .starbucks-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+  background-color: #f6f5ef;
   width: 100%;
-  height: 10rem;
-  border: 1px solid black;
-  overflow: hidden;
+  box-sizing: border-box;
 }
-
+/* 내부 컨테이너 중앙 정렬 */
+.header__contents-wrapper {
+  max-width: 1200px; /* 원하는 중앙폭 */
+  margin: 0 auto; /* 가운데 정렬 */
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+/* 로고 */
 .header__logo {
-  height: 75px;
-  top: 22px;
   width: 75px;
-  z-index: 12;
+  height: 75px;
+  margin-right: 2rem;
+  flex-shrink: 0;
 }
 .header__logo a {
-  background: url('../img/logo.png');
+  background: url('../img/logo.png') no-repeat center/contain;
   display: block;
-  height: 100%;
-  overflow: hidden;
-  text-indent: -20000px;
   width: 100%;
+  height: 100%;
+  text-indent: -9999px;
+}
+
+/* 헤더 콘텐츠 전체 */
+.header__contents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 상단 우측 링크들 */
+.header__top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+.top__nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: lighter;
+}
+.top__nav li {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* 메인 내비게이션 */
+.header__nav {
+  /* border-top: 1px solid #ddd; */
+  padding-top: 2rem;
+}
+.main__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+.main__nav li {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .starbucks-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .header__logo {
+    margin-bottom: 1rem;
+  }
+
+  .header__top {
+    justify-content: center;
+  }
+
+  .top__nav,
+  .main__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .main__nav {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .top__nav,
+  .main__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top__nav li,
+  .main__nav li {
+    font-size: 0.85rem;
+  }
 }

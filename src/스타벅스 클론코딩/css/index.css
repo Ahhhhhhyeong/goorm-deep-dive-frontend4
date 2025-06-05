@@ -1,7 +1,12 @@
+/* 기본 설정 */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif,
+    Helvetica;
+  font-size: 1em;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
-
 /* 헤더는 따로 css 분리시킴! */
 .main__section {
   background-position: center;

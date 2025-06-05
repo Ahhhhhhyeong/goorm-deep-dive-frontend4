@@ -4,34 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>스타벅스 클론 메인화면</title>
+    <!-- bootstrap icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- custom CSS -->
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/header.css" />
   </head>
   <body>
     <header class="starbucks-header">
-      <figure class="header__logo">
-        <a href="#" title="Starbucks Korea">스타벅스로고</a>
-      </figure>
-      <div class="header__top">
-        <ul class="top__nav nav-flex">
-          <li>Sign In</li>
-          <li>My Starbucks</li>
-          <li>Customer Service & Ideas</li>
-          <li>Find a Store</li>
-          <li>검색버튼</li>
-        </ul>
-      </div>
-      <nav class="header__nav">
-        <ul class="main__nav nav-flex">
-          <li>coffee</li>
-          <li>menu</li>
-          <li>store</li>
-          <li>responsibility</li>
-          <li>starbucks rewards</li>
-          <li>corporate sales</li>
-          <li>what's new</li>
-        </ul>
-      </nav>
+      <section class="header__contents-wrapper">
+        <figure class="header__logo">
+          <a href="#" title="Starbucks Korea">스타벅스로고</a>
+        </figure>
+        <article class="header__contents">
+          <div class="header__top">
+            <ul class="top__nav nav-flex">
+              <li>Sign In</li>
+              <li>My Starbucks</li>
+              <li>Customer Service & Ideas</li>
+              <li>Find a Store</li>
+              <li>
+                <button><i class="bi bi-search"></i></button>
+              </li>
+            </ul>
+          </div>
+          <nav class="header__nav">
+            <ul class="main__nav nav-flex">
+              <li>coffee</li>
+              <li>menu</li>
+              <li>store</li>
+              <li>responsibility</li>
+              <li>starbucks rewards</li>
+              <li>corporate sales</li>
+              <li>what's new</li>
+            </ul>
+          </nav>
+        </article>
+      </section>
     </header>
     <main>
       <!-- 오른쪽 붙어있는 부분 -->

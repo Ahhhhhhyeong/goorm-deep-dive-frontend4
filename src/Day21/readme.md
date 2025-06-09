@@ -34,8 +34,13 @@
 ## 🔍 React란?
 
 - **SPA (Single Page Application)** 방식
-  - 하나의 HTML 파일로 모든 페이지 렌더링
-  - 자바스크립트를 통해 UI 컴포넌트를 동적으로 처리
+
+### 📄 SPA란?
+
+> Single Page Application 의 약자
+
+- 하나의 HTML 페이지와 애플리케이션 실행에 필요한 JS와 CSS같은 모든 자산을 로드하는 애플리케이션
+- 페이지 또는 후속 페이지의 상호작용은 서버로부터 새로운 페이지를 불러오지 않으므로 페이지가 다시 로드되지 않는다.
 
 ### 🔸 UI란?
 
@@ -49,11 +54,20 @@
 ### ✅ JSX (JavaScript XML)
 
 - 자바스크립트 안에서 HTML처럼 사용하는 **확장 문법**
+- React DOM은 `HTML 어트리뷰트(attribute)` 이름 대신 `캐멀케이스(camelCase)`를 네이밍 컨벤션으로 사용
+  - 예 : `class` -> `className`
 
 ### ✅ 컴포넌트
 
 - UI의 독립적인 블럭
 - **작고 재사용 가능한 단위**
+- 컴포넌트는 기능별로 나눌 수 있으며 다른 컴포넌트 안에서 사용 가능
+
+#### ✅ props
+
+- 컴포넌트의 입력값
+- 부모 컴포넌트로부터 자식 컴포넌트로 전달된 데이터
+- `props`는 **읽기 전용!!** 어떤 방식으로든 수정해서는 안됨
 
 ### ✅ Fragment (`<></>`)
 
@@ -193,3 +207,7 @@ export default function Users({ user, addr }) {
 ```
 
 ---
+
+#### 정리할 때 참고한 사이트
+
+[React 공식 홈페이지](https://ko.legacy.reactjs.org/docs/glossary.html)

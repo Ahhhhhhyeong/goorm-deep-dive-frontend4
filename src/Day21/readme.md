@@ -63,11 +63,23 @@
 - **작고 재사용 가능한 단위**
 - 컴포넌트는 기능별로 나눌 수 있으며 다른 컴포넌트 안에서 사용 가능
 
-#### ✅ props
+#### 👾 props
 
 - 컴포넌트의 입력값
 - 부모 컴포넌트로부터 자식 컴포넌트로 전달된 데이터
 - `props`는 **읽기 전용!!** 어떤 방식으로든 수정해서는 안됨
+
+**📌 React props 종류**
+
+| 분류     | 예시                          | 설명                        |
+| -------- | ----------------------------- | --------------------------- |
+| 기본형   | `string`, `number`, `boolean` | 텍스트, 숫자, true/false 등 |
+| 객체     | `{ user: { name, age } }`     | 여러 데이터 묶음            |
+| 배열     | `[1, 2, 3]`                   | 리스트 형태 데이터 전달     |
+| 함수     | `() => {}`                    | 콜백 함수                   |
+| children | `<Component>내용</Component>` | 자식 요소 받기              |
+| 기본값   | `props = default`             | 값이 없을 때 기본값 설정    |
+| 기타     | `...rest`                     | 나머지 props 모두 받기      |
 
 ### ✅ Fragment (`<></>`)
 
@@ -102,109 +114,26 @@
 
 ---
 
-## 💡 예제 코드
+## Vite
 
-### 📘 AppEx 컴포넌트
+### 🚀 Vite 란?
 
-```jsx
-import Blog from './components/Blog';
+- Vite는 모던 웹 개발을 위한 초고속 빌드 도구
+- ES 모듈(ESM)을 기반으로 하며, 빠른 개발 환경과 최적화된 빌드를 제공
+- [Vite 공식 페이지](https://ko.vite.dev/guide/)
 
-function AppEx() {
-  return (
-    <div className='AppEx'>
-      <div className='black-nav'>
-        <div>개발 blog</div>
-      </div>
-      <Blog />
-      <Blog />
-      <Blog />
-    </div>
-  );
-}
+#### Vite vs Create React App(CRA) 차이
 
-export default AppEx;
-```
-
-### 📘 기본 함수형 컴포넌트
-
-```jsx
-import React from 'react';
-
-export default function Header() {
-  return <div>Header</div>;
-}
-```
-
----
-
-## 🧪 실습: second-project
-
-### 📘 App.jsx
-
-```jsx
-import { useState } from 'react';
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-import Greeting from './components/Greeting';
-import MyButton from './components/MyButton';
-import Users from './components/Users';
-
-function App() {
-  let names = ['전준우', '김동혁', '감보아'];
-
-  let userData = {
-    name: '전준우',
-    age: '39',
-  };
-
-  return (
-    <>
-      {names.map((name, index) => (
-        <Greeting name={name} key={index} />
-      ))}
-
-      <MyButton label='로그인' />
-      <MyButton label='회원가입' />
-
-      <Users user={userData} addr='부산시' />
-    </>
-  );
-}
-
-export default App;
-```
-
-### 📘 Greeting.jsx
-
-```jsx
-import React from 'react';
-
-export default function Greeting({ name }) {
-  return (
-    <>
-      <h1>안녕하세요! {name}님!</h1>
-    </>
-  );
-}
-```
-
-### 📘 Users.jsx
-
-```jsx
-import React from 'react';
-
-export default function Users({ user, addr }) {
-  return (
-    <div>
-      <h2>이름 : {user.name}</h2>
-      <p>나이 : {user.age}</p>
-      <p>주소 : {addr}</p>
-    </div>
-  );
-}
-```
+| 항목                | Vite 🔥                        | CRA (Create React App) 🧰      |
+| ------------------- | ------------------------------ | ------------------------------ |
+| **개발 서버 속도**  | 매우 빠름 (즉시 시작)          | 느림 (전체 번들링 필요)        |
+| **번들링 도구**     | ESBuild (Go로 작성, 매우 빠름) | Webpack (느림)                 |
+| **핫 리로드 (HMR)** | 즉각적, 거의 지연 없음         | 다소 느림                      |
+| **설정 접근성**     | 쉽고 유연 (vite.config.js)     | 숨겨짐 (`eject`해야 수정 가능) |
+| **최초 빌드 속도**  | 빠름                           | 느림                           |
+| **코드 스플리팅**   | 기본 제공                      | 설정 필요                      |
+| **플러그인 시스템** | 가볍고 단순                    | 복잡한 Webpack 기반            |
+| **출시 시점**       | 비교적 최신 (2020\~)           | 오래됨 (2016\~)                |
 
 ---
 

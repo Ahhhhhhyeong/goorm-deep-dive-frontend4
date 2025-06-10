@@ -1,12 +1,30 @@
-# React + Vite
+## day22-react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 오전 수업 때 한 실습들
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 컴포넌트 소개
 
-## Expanding the ESLint configuration
+- [Hello.jsx](./src/components/Hello.jsx)
+  - class 컴포넌트 사용 예시
+- 어제 만든 카드 부분 컴포넌트 분리
+  - [Avater.jsx](./src/components/Avater.jsx)
+    - 어제 만든 카드에 이미지부분만 따로 컴포넌트 생성
+  - [Profile.jsx](./src/components/Profile.jsx)
+    - 어제 만든 카드의 카드 부분(이름, 직업이 쓰여진 부분) 컴포넌트
+- 네이버 블로그 리스트 클론
+  - [ArticleList.jsx](./src/components/ArticleList.jsx)
+    - 네이버 블로그 리스트를 보여주는 컴포넌트
+  - [ArticleCard.jsx](./src/components/ArticleCard.jsx)
+    - 블로그 내용 한 칸을 보여주는 컴포넌트
+    <!-- 만약 더 쪼갠다면
+  - [ProfileHeader.jsx]()
+    - 블로그 프로필을 보여주는 컴포넌트 (유저이름 + 시간)
+  - [ArticleImage.jsx]()
+    - 썸내일 이미지
+  - [ArticleMeta.jsx]()
+    - 좋아요수, 댓글 수
+      -->
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---

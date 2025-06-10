@@ -1,12 +1,22 @@
-import { useState } from 'react';
-import './App.css';
+import Profile from './components/Profile';
 
-import Hello from './components/Hello';
+// 전역변수처럼 여러 컴포넌트가 동일한 디자인을 가지고 싶을 경우에는 App(메인화면)에서 디자인하면 좋다!
+import './App.css';
 
 function App() {
   return (
     <>
-      <Hello />
+      <Profile
+        image=''
+        name='James Kim'
+        title='프론트엔드 개발자'
+        isNew={true}
+      />
+      {/* 
+        왜 true만 중괄호? 
+        문자열은 중괄호 없이 '문자열'로 전달해도 되지만, 'true'(문자열)로 보낼 시, 타입이 달라져서 의미도 달라질 수 있음!
+        숫자나 boolean(true/false) 등의 변수들은 반드시 중괄호를 달아주어야 한다.
+         */}
     </>
   );
 }
@@ -57,10 +67,7 @@ export default App;
  *
  *
  *
- * ---
- * 돔 개념 정리해놓기!!!
- *
- *
+
  * ----
  * 인터넷은 IP로 구성되어있다. 하지만 IP주소는 너무 어려우니 도메인(글자)로 나타낸다.
  * 이전에는 html문서등을 서버에서 저장해서 불러오는 방식을 썼었다.

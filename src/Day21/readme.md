@@ -2,6 +2,17 @@
 
 ---
 
+### 🔗 프로젝트 소개
+
+- [my-app1](./my-app1/)
+  - 첫 리액트 프로젝트!
+- [second-project](./second-project/)
+  - 컴포넌트 분리 실습
+- [my-blog1](./my-blog1/)
+  - 미션 프로젝트(직접 만들어보는!)
+
+---
+
 ## 📌 React 설치 및 프로젝트 생성
 
 ### ✅ Node.js 설치

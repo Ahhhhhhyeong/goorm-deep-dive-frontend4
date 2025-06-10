@@ -26,5 +26,9 @@
   - [ArticleMeta.jsx]()
     - 좋아요수, 댓글 수
       -->
+- [Counter.jsx](./src/components/Counter.jsx)
+  - `useState` 훅 실습
+  - 함수형 컴포넌트에서는 상태나 생명주기를 사용할 수 있게 도와주는 도구 : Hooks
+  - 16버전 이상부터 사용가능
 
 ---

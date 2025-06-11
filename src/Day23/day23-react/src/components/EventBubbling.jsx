@@ -16,6 +16,7 @@ export default function EventBubbling() {
 
   return (
     <div onClick={handleParentClick}>
+      <h1>버블링</h1>
       <button onClick={handleButtonClick}>클릭해보세용</button>
     </div>
   );

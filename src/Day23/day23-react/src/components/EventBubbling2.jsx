@@ -6,6 +6,7 @@ export default function EventBubbling2() {
       onClickCapture={() => {
         alert('div');
       }}>
+      <h1>캡쳐링</h1>
       <section
         onClickCapture={() => {
           alert('section');

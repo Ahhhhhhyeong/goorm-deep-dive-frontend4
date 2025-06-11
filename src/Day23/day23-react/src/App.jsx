@@ -3,13 +3,14 @@ import './App.css';
 import EventBubbling from './components/EventBubbling';
 import EventBubbling2 from './components/EventBubbling2';
 import EventBubbling3 from './components/EventBubbling3';
+import ReactHookFormEx1 from './components/ReactHookFormEx1';
+import EventDelegationEx from './components/EventDelegationEx';
 
 function App() {
   return (
     <>
-      <EventBubbling />
-      <EventBubbling2 />
-      <EventBubbling3 />
+      <ReactHookFormEx1 />
+      <EventDelegationEx />
     </>
   );
 }

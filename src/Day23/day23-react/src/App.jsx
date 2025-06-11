@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import './App.css';
-import EventBubbling from './components/EventBubbling';
-import EventBubbling2 from './components/EventBubbling2';
-import EventBubbling3 from './components/EventBubbling3';
-import ReactHookFormEx1 from './components/ReactHookFormEx1';
-import EventDelegationEx from './components/EventDelegationEx';
+import EventBubbling from './components/eventEx/EventBubbling';
+import EventBubbling2 from './components/eventEx/EventBubbling2';
+import EventBubbling3 from './components/eventEx/EventBubbling3';
+import ReactHookFormEx1 from './components/eventEx/ReactHookFormEx1';
+import EventDelegationEx from './components/eventEx/EventDelegationEx';
+import UseEffectComponents from './components/useEffect/UseEffectComponents';
 
 function App() {
   return (
     <>
-      <ReactHookFormEx1 />
-      <EventDelegationEx />
+      <UseEffectComponents />
     </>
   );
 }

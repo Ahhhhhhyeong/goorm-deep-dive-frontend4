@@ -1,0 +1,151 @@
+#root {
+  max-width: 1800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* header 영역 */
+.header {
+  margin: 1.6rem;
+}
+.header-logo {
+  width: 202px;
+  height: 55px;
+}
+/* header menu 영역 */
+.top-menu {
+  color: var(--font-dark-color);
+  font-weight: 600;
+}
+.top-menu:hover {
+  color: var(--font-top-menu-color);
+}
+
+/* Contents Area */
+/* SubVisual.jsx part */
+.visual-wrapper {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  margin-top: 1rem;
+  background-color: pink;
+}
+
+.sub-visual-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sub-visual-info {
+  color: var(--font-dark-color);
+}
+.sub-visual-info h1 {
+  font-size: 3rem;
+  line-height: 4.2rem;
+}
+.sub-visual-info p {
+  font-size: 1.3rem;
+  font-stretch: semi-expanded;
+}
+
+.sub-button-groups {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
+}
+.button-groups-item {
+  width: 100%;
+  padding: 0.3rem 0rem;
+  border: 1px solid var(--sub-menu-bg-gray);
+}
+.button-groups-item.isClick {
+  border: none;
+  background-color: var(--sub-menu-bg-gray);
+}
+
+.button-groups-item a {
+  text-decoration: none;
+  color: var(--font-primary-color);
+}
+.button-groups-item.isClick a {
+  color: var(--sub-menu-bg-white);
+}
+
+/* content location  */
+.contents-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.contents-location {
+  margin-top: 2rem;
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--font-location-info-color);
+}
+
+/* best item */
+.contents-best-item {
+}
+
+.best-item-divider {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.best-item-divider::before,
+.best-item-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--font-dark-color);
+}
+
+.best-item-divider .title {
+  padding: 0 16px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--font-dark-color);
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.best-item {
+  flex: 0 0 calc(100% / 3); /* 한 화면에 3개 보이도록 설정 */
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav-button {
+  border: none;
+  font-size: 30px;
+  color: white;
+  padding: 2px 8px;
+}
+
+.best-item img {
+  height: 15rem;
+}
+
+.best-item h3 {
+  font-size: 0.9rem;
+}

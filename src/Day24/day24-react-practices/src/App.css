@@ -1,0 +1,57 @@
+.todo-wrap {
+  max-width: 1280px;
+  min-width: 980px;
+  /* height: 100vh; */
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-card {
+  width: 45vh;
+  margin: 0 auto;
+}
+
+.todo-card__display {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+
+.todo-card__display .display__option {
+  display: flex;
+}
+
+.todo-card__display .display__option a {
+  text-decoration: none;
+  font-weight: bold;
+  color: orange;
+}
+
+.mode-btn {
+  border: none;
+  background-color: transparent;
+}
+
+/* todo input text */
+#todoText {
+  border: 1px solid #ddd;
+  border-radius: 3px 0px 0px 3px;
+  padding: 0.3rem;
+  width: 19rem;
+}
+.input-btn {
+  border: 1px solid orange;
+  background-color: orange;
+  border-radius: 0px 3px 3px 0px;
+  padding: 0.3rem 1.1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-contents {
+  display: flex;
+  justify-content: space-between;
+}

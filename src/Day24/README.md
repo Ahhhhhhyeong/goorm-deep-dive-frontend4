@@ -210,3 +210,14 @@ useEffect(() => {
 - 의존성 배열이 빈 배열이면, **컴포넌트 최초 마운트 시 한 번만 실행**됨
 
 ---
+
+#### ✅ React Query
+
+> 🧐 React Query 란?
+>
+> > fetching, caching, 서버 데이터와의 동기화를 지원해주는 라이브러리
+
+**읽어볼만한거**
+
+- [📚 react-query 공식문서](https://tanstack.com/query/latest/docs/framework/react/overview)
+- [📚 react-query 공식문서 누군가 한글로 번역해둔 페이지](https://www.codingmax.net/courses/ko-react-query)

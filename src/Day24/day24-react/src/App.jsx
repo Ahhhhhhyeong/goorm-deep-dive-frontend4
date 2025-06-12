@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       {/* <UseEffectEx /> */}
-      {/* <UseEffectExEx2 /> */}
-      <ObjectPaser />
+      <UseEffectExEx2 />
+      {/* <ObjectPaser /> */}
     </>
   );
 }

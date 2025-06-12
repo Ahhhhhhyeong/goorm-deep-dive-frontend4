@@ -141,3 +141,72 @@ const user = {
 ```
 
 > _🚨 배포 시에는 영향을 주지 않으며, 개발 모드에서만 작동합니다._
+
+---
+
+## ⚠️ `useEffect`와 `fetch`를 함께 사용 시, 무한루프
+
+### 🔁 무한 루프가 발생하는 이유
+
+```js
+useEffect(() => {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.json())
+    .then((json) => setBoard(json));
+}, [board]); // 문제의 핵심!
+```
+
+- `useEffect`의 의존성 배열에 `board`가 있음
+- `setBoard(json)`이 실행되면 `board` 값이 바뀌고 → **리렌더링 발생** → `useEffect` 재실행됨
+- 재실행되면 다시 `setBoard(json)`을 호출 → `board` 변경 → 또 리렌더링...
+- **무한 루프**에 빠지게 됨
+
+### ✅ 방지 방법
+
+#### 1. if(board.length === 0)
+
+```js
+useEffect(() => {
+  if (board.length === 0) {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((json) => setBoard(json));
+  }
+}, [board]);
+```
+
+- `board.length === 0`일 때만 데이터를 불러오도록 조건을 걸면, 최초 한 번만 `fetch`가 실행됨.
+- 이후 `board`가 값으로 채워지면 `length !== 0`이 되어, 더 이상 실행되지 않음.
+
+#### 2. useRef를 이용한 첫 로딩 체크
+
+```js
+const firstLoad = useRef(true);
+
+useEffect(() => {
+  if (firstLoad.current) {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((json) => setBoard(json));
+    firstLoad.current = false;
+  }
+}, [board]);
+```
+
+- `useRef`는 리렌더링 되어도 값이 유지되며 **값이 바뀌어도 화면이 다시 렌더링되지 않음**
+- `firstLoad.current`가 `true`일 때만 fetch 실행 → 실행 후 `false`로 바꿔서 두 번 다시 실행되지 않도록 만듦
+- `useState`를 쓰면 값 변경 시마다 리렌더링되지만, `useRef`는 렌더링과 무관한 **비표시용 플래그 변수**로 활용 가능
+
+#### 3. 의존성 배열에서 `board`를 제거
+
+```js
+useEffect(() => {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then((res) => res.json())
+    .then((json) => setBoard(json));
+}, []); // 최초 1회만 실행
+```
+
+- 의존성 배열이 빈 배열이면, **컴포넌트 최초 마운트 시 한 번만 실행**됨
+
+---

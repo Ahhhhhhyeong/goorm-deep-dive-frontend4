@@ -3,18 +3,19 @@ import { Card, Tab, Nav } from 'react-bootstrap';
 import TodoContents from './TodoContents';
 
 export default function TodoCard() {
-  /**
+  /** Todo
    * 1. demo data로 화면 구성 잡기
    * 2. jsonplaceholder에서 todos 받아오기
    * 3. 화면구성잡은거 반복문(map) 사용하여 화면에 나타내기
+   * ----
+   * 추가적인부분(선택사항)
+   * 1. 체크를 눌리면 completed 값 수정
+   * 2. 텍스트 추가하면 추가 -> completed는 false가 기본
+   * 3. 삭제
    */
-  const demoData = {
-    userId: 1,
-    id: 1,
-    title: 'delectus aut autem',
-    completed: false,
-  };
-  const [todo, setTodo] = useState([]);
+
+  const [todo, setTodo] = useState();
+  const [filteredTodos, setFilteredTodos] = useState([]);
   const [activeTab, setActiveTab] = useState('all');
 
   useEffect(() => {
@@ -22,6 +23,16 @@ export default function TodoCard() {
       .then((response) => response.json())
       .then((json) => setTodo(json));
   }, []);
+
+  useEffect(() => {
+    if (activeTab === 'active') {
+      setFilteredTodos(todo.filter((item) => !item.completed));
+    } else if (activeTab === 'completed') {
+      setFilteredTodos(todo.filter((item) => item.completed));
+    } else {
+      setFilteredTodos(todo);
+    }
+  }, [activeTab, todo]);
 
   return (
     <>
@@ -47,7 +58,7 @@ export default function TodoCard() {
             </Card.Header>
             <Card.Body>
               <Tab.Content>
-                {todo?.map((contents) => (
+                {filteredTodos?.map((contents) => (
                   <TodoContents
                     eventKey={activeTab}
                     contents={contents}

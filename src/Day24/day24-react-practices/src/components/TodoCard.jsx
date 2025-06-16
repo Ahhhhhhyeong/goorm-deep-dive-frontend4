@@ -34,6 +34,10 @@ export default function TodoCard() {
     }
   }, [activeTab, todo]);
 
+  const isSubmit = (k) => {
+    console.log('k', k);
+  };
+
   return (
     <>
       <div className='todo-wrap' data-bs-theme='light'>
@@ -69,7 +73,9 @@ export default function TodoCard() {
             </Card.Body>
             <Card.Footer className='text-muted'>
               <input type='text' placeholder='Add Todo' id='todoText' />
-              <button className='input-btn'>Add</button>
+              <button className='input-btn' onSubmit={isSubmit}>
+                Add
+              </button>
             </Card.Footer>
           </Tab.Container>
         </Card>

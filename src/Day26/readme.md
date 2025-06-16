@@ -2,6 +2,18 @@
 
 ---
 
+### 🔗 프로젝트 설명
+
+- [day26-react](./day26-react/)
+
+  - React Router : Navigate 페이지 이동, 중첩 라우터 실습
+  - API 호출
+    - Promise
+    - async / await
+
+- [movie-api-practices](./movie-api-practices/)
+  - 영화진흥원 api 호출하여 데이터 표출 실습
+
 ---
 
 # 📍 React Router 핵심 정리

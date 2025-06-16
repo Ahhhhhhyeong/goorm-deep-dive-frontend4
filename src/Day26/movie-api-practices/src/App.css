@@ -1,0 +1,11 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.movie-image {
+  width: 20vh;
+  height: 25vh;
+  overflow: hidden;
+}

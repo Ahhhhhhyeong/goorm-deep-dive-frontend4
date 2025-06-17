@@ -41,6 +41,7 @@ export default function MovieList() {
             <option value='showCnt'>예매율순</option>
             <option value='audiAcc'>관람객순</option>
           </select>
+          <button>Go</button>
         </div>
       </section>
       <section className='movie-list__wrapper'>
@@ -60,7 +61,7 @@ export default function MovieList() {
             <article className='movie-info'>
               <h3>{movie.movieNm}</h3>
               <p>
-                예매율 <span>{movie.salesShare}</span>
+                예매율 <span>{movie.salesShare}%</span>
               </p>
               <p>{movie.openDt} 개봉</p>
               <button>예매하기</button>

@@ -58,8 +58,8 @@ export default function MovieDetail() {
 
   return (
     <div className='movie-detail'>
-      <article></article>
-      <section>
+      <article className='movie-image'></article>
+      <section className='movie-detail-right'>
         <h3>{movie.movieNm}</h3>
         <h5>{movie.movieNmEn}</h5>
         <hr />

@@ -4,8 +4,97 @@
   padding: 2rem;
 }
 
+.top-menu a {
+  text-decoration: none;
+  color: #555;
+}
+
+.movie-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-list__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.movie-rank {
+  width: 100%;
+  height: 100%;
+  background: #555;
+  color: white;
+  text-align: center;
+}
+/* 1~3 번째 .movie-list박스 내부의 .movie-rank 스타일 */
+.movie-list:nth-child(-n + 3) .movie-rank {
+  background-color: rgb(227, 75, 75);
+}
+.movie-rank h3 {
+  padding: 2px 0px;
+  margin-bottom: 3px;
+}
+
 .movie-image {
-  width: 20vh;
-  height: 25vh;
+  width: 26vh;
+  height: 36vh;
   overflow: hidden;
+  background-color: #555;
+}
+
+.movie-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-info h3,
+p,
+button {
+  margin: 0;
+}
+
+.movie-info p {
+  font-size: 0.8rem;
+}
+.movie-info span {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* movie detail */
+.movie-detail {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.movie-detail .movie-image {
+  width: 12rem;
+  height: 16rem;
+}
+
+.movie-detail-right {
+  margin-left: 3rem;
+  max-width: 700px;
+}
+
+.movie-detail-right h3,
+h5 {
+  margin: 0;
+}
+
+.movie-detail-right h5 {
+  margin-bottom: 4rem;
+  color: #bbbbbb;
+}
+
+.movie-detail-info {
+  font-weight: bold;
+  font-size: 0.9rem;
 }

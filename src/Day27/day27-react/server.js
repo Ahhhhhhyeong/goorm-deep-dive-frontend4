@@ -6,6 +6,7 @@
  */
 const express = require('express'); //request express
 const cors = require('cors');
+const axios = require('axios');
 
 const app = express(); //서버를 만듦(앱 인스턴스 생성)
 const port = 5000; //port num
@@ -17,6 +18,22 @@ app.use(cors());
 app.get('/api/hello', (req, rep) => {
   //요청 처리
   rep.json({ message: 'hi Express Server' });
+});
+
+// 서버에서 네이버에 접속할 수 있도록
+app.get('/api/naver', async function (req, res) {
+  try {
+    //아래처럼 url만 작성하면 네이버는 봇 차단을 할 수 있다.
+    const res = await axios.get('https://www.naver.com/', {
+      headers: {
+        'User-Agent': 'Mozilla/5.0',
+      },
+    });
+    console.log(res);
+    response.json(res.data);
+  } catch (e) {
+    console.error(`❌error: ${e}`);
+  }
 });
 
 // 서버 실행

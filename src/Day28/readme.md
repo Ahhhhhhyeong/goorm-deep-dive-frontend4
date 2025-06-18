@@ -5,6 +5,7 @@
 ### 🔗 프로젝트 소개
 
 - [day28-react](./day28-react/) : 오전에 배운 내용 실습 코드
+- [day28-react-practices](./day28-react-practices/) : Tailwind CSS 실습
 
 ---
 

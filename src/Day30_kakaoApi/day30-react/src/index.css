@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@layer components {
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  a {
+    color: rgb(77, 77, 224);
+  }
+  a:hover {
+    color: skyblue;
+  }
+}

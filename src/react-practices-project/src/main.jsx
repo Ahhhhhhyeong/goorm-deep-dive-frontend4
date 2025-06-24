@@ -7,6 +7,9 @@ import App from './App.jsx';
 import Login from './pages/Login.jsx';
 import LoginForm, { loginAction } from './components/LoginForm.jsx';
 import KakaoLogin from './api/KakaoLogin.jsx';
+import Product from './pages/Product.jsx';
+import { CartProvider } from './context/CartContext.jsx';
+import Cart from './pages/Cart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,10 +38,18 @@ const router = createBrowserRouter([
     path: '/callback',
     element: <Login />,
   },
+  {
+    path: '/product',
+    element: <Product />,
+  },
+  {
+    path: '/cart',
+    element: <Cart />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <CartProvider>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </CartProvider>
 );

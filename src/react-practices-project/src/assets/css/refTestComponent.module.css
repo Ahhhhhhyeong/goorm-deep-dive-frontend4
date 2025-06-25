@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@layer components {
+  .container {
+    width: 100vh;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .title {
+    margin: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .subcontainer {
+    width: 20rem;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+  }
+  .btnAdd {
+    background-color: oklch(68.5% 0.169 237.323);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 0.6rem 2em;
+    border-radius: 0.8rem;
+    margin: 0.3rem 0.8rem;
+  }
+}

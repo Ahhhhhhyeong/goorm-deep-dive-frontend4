@@ -10,6 +10,7 @@ import KakaoLogin from './api/KakaoLogin.jsx';
 import Product from './pages/Product.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 import Cart from './pages/Cart.jsx';
+import RefTest from './pages/RefTest.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: '/cart',
     element: <Cart />,
+  },
+  {
+    path: '/reftest',
+    element: <RefTest />,
   },
 ]);
 

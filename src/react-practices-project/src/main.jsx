@@ -11,6 +11,9 @@ import Product from './pages/Product.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 import Cart from './pages/Cart.jsx';
 import RefTest from './pages/RefTest.jsx';
+import LikeBoard from './Day33/pages/LikeBoard.jsx';
+import Timer from './Day33/pages/Timer.jsx';
+import Game from './Day33/pages/Game.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +53,18 @@ const router = createBrowserRouter([
   {
     path: '/reftest',
     element: <RefTest />,
+  },
+  {
+    path: '/likeboard',
+    element: <LikeBoard />,
+  },
+  {
+    path: '/timer',
+    element: <Timer />,
+  },
+  {
+    path: '/game',
+    element: <Game />,
   },
 ]);
 

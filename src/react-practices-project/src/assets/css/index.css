@@ -42,6 +42,9 @@
     background-color: white;
     color: var(--color-zinc-700);
   }
+  button {
+    cursor: pointer;
+  }
 }
 
 @theme {

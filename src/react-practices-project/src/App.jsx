@@ -16,6 +16,18 @@ function App() {
       <Link to={'/reftest'} className='text-blue-400 hover:text-blue-800'>
         06월 24일 실습
       </Link>
+      <h1 className='text-3xl font-bold'>좋아요, 싫어요 버튼 구현 실습</h1>
+      <Link to={'/likeboard'} className='text-blue-400 hover:text-blue-800'>
+        06월 25일 실습 -1
+      </Link>
+      <h1 className='text-3xl font-bold'>타이머 구현 실습</h1>
+      <Link to={'/timer'} className='text-blue-400 hover:text-blue-800'>
+        06월 25일 실습 -2
+      </Link>
+      <h1 className='text-3xl font-bold'>입장 명단 관리</h1>
+      <Link to={'/game'} className='text-blue-400 hover:text-blue-800'>
+        06월 25일 실습 -3
+      </Link>
     </div>
   );
 }

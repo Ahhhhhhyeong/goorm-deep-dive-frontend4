@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 export default function PageEx() {
   const clientId = import.meta.env.VITE_NAVER_CLIENT_ID;
   const clientSecret = import.meta.env.VITE_NAVER_CLIENT_SECRET;
-  const keyword = '망곰이';
+  const [keyword, setKeyword] = useState('망곰이');
   //우회용 url
   const proxy = 'https://cors-anywhere.herokuapp.com/';
   const requestUrl = `https://openapi.naver.com/v1/search/image`;
@@ -16,7 +16,7 @@ export default function PageEx() {
   // 1. 전체 페이지 개수 = 전체 아이템 수 / 한 페이지에 보여질 데이터 개수
   const totalPage = images.length / itemCount;
   // 2. 시작하는 페이지 번호
-  let startPage = 0;
+  let startPage = 1;
 
   //비동기 통신 시작
   const fetchImages = async () => {

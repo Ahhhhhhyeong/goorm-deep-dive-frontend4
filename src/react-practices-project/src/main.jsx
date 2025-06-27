@@ -14,6 +14,11 @@ import RefTest from './pages/RefTest.jsx';
 import LikeBoard from './Day33/pages/LikeBoard.jsx';
 import Timer from './Day33/pages/Timer.jsx';
 import Game from './Day33/pages/Game.jsx';
+import TreeAlgorithmPractices from './Day34/pages/TreeAlgorithmPractices.jsx';
+import ListTree from './Day34/pages/ListTree.jsx';
+import CompanyTree from './Day34/pages/CompanyTree.jsx';
+import GameTree from './Day34/pages/GameTree.jsx';
+import UseReducerPractices from './Day33/pages/UseReducerPractices.jsx';
 
 const router = createBrowserRouter([
   {
@@ -55,16 +60,44 @@ const router = createBrowserRouter([
     element: <RefTest />,
   },
   {
-    path: '/likeboard',
-    element: <LikeBoard />,
+    path: '/reduceprcd',
+    element: <UseReducerPractices />,
+    children: [
+      {
+        path: 'likeboard',
+        element: <LikeBoard />,
+      },
+      {
+        path: 'timer',
+        element: <Timer />,
+      },
+      {
+        path: 'game',
+        element: <Game />,
+      },
+    ],
   },
   {
-    path: '/timer',
-    element: <Timer />,
-  },
-  {
-    path: '/game',
-    element: <Game />,
+    path: '/treeprcd',
+    element: <TreeAlgorithmPractices />,
+    children: [
+      {
+        index: true, // 기본 진입
+        element: <ListTree />,
+      },
+      {
+        path: 'list',
+        element: <ListTree />,
+      },
+      {
+        path: 'company',
+        element: <CompanyTree />,
+      },
+      {
+        path: 'game',
+        element: <GameTree />,
+      },
+    ],
   },
 ]);
 

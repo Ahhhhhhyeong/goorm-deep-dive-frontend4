@@ -1,24 +1,16 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import GameList from '../components/GameList';
 
-function clickReducer(state, action) {
-  switch (action.type) {
-    case 'TOGGLE':
-      return { ...state, [action.id]: !state[action.id] };
-  }
-}
-
 export default function GameTree() {
-  const [isClick, dispatch] = useReducer(clickReducer, {});
-  function toggle(id) {
-    return dispatch({ type: 'TOGGLE', id });
-  }
+  const [isClick, dispatch] = useState(clickReducer, {});
+  const [history, setHistory] = useState([]);
+
   return (
     <div className='m-4'>
       <h1 className='text-2xl font-semibold mb-3'>게임 선택지 트리 실습</h1>
       <p className='text-sm text-zinc-600 mb-3'>아래의 선택지에 따라 엔딩이 달라집니다</p>
       <h3 className='text-lg font-semibold text-green-500 mb-3'>{questTree.question}</h3>
-      <GameList nodes={questTree.options} clickState={isClick} toggle={toggle} />
+      {/* <GameList nodes={questTree.options} clickState={isClick} toggle={toggle} /> */}
     </div>
   );
 }

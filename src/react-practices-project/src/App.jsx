@@ -24,6 +24,14 @@ function App() {
       <Link to={'/treeprcd'} className='text-blue-400 hover:text-blue-800'>
         06월 26일 실습
       </Link>
+      <h1 className='text-3xl font-bold'>06/27 실습 모음 페이지</h1>
+      <Link to={'/graphprcd'} className='text-blue-400 hover:text-blue-800'>
+        06월 27일 실습
+      </Link>
+      <h1 className='text-3xl font-bold'>06/30 실습 모음 페이지</h1>
+      <Link to={'/sortprcd'} className='text-blue-400 hover:text-blue-800'>
+        06월 30일 실습
+      </Link>
     </div>
   );
 }

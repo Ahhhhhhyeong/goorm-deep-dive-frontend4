@@ -19,6 +19,12 @@ import ListTree from './Day34/pages/ListTree.jsx';
 import CompanyTree from './Day34/pages/CompanyTree.jsx';
 import GameTree from './Day34/pages/GameTree.jsx';
 import UseReducerPractices from './Day33/pages/UseReducerPractices.jsx';
+import GraphPractices from './Algorithm/page/GraphPractices.jsx';
+import DirectedGraph from './Algorithm/components/DirectedGraph.jsx';
+import SortPracties from './Algorithm/page/SortPractices.jsx';
+import QuickSortNumArr from './Algorithm/components/QuickSortNumArr.jsx';
+import MinHeap from './Algorithm/components/MinHeap.jsx';
+import StringLengSort from './Algorithm/components/StringLengSort.jsx';
 
 const router = createBrowserRouter([
   {
@@ -96,6 +102,42 @@ const router = createBrowserRouter([
       {
         path: 'game',
         element: <GameTree />,
+      },
+    ],
+  },
+  {
+    path: '/graphprcd',
+    element: <GraphPractices />,
+    children: [
+      {
+        index: true, // 기본 진입
+        element: <DirectedGraph />,
+      },
+      {
+        path: 'directed',
+        element: <DirectedGraph />,
+      },
+    ],
+  },
+  {
+    path: '/sortprcd',
+    element: <SortPracties />,
+    children: [
+      {
+        index: true, // 기본 진입
+        element: <QuickSortNumArr />,
+      },
+      {
+        path: 'directed',
+        element: <QuickSortNumArr />,
+      },
+      {
+        path: 'minHeap',
+        element: <MinHeap />,
+      },
+      {
+        path: 'stringSort',
+        element: <StringLengSort />,
       },
     ],
   },

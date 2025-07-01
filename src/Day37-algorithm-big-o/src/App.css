@@ -26,3 +26,31 @@
   padding: 2rem;
   margin-bottom: 1rem;
 }
+
+.game-div {
+  margin: 1rem;
+  border: 1px solid #ddd;
+  padding: 2rem;
+
+  display: grid;
+  place-items: center;
+  height: '100vh';
+}
+
+.game-div td {
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.td-show {
+  background-color: #6c6767;
+}
+.td-close {
+  background-color: none;
+}
+.td-boom {
+  background-color: #2a2a2a;
+  color: white;
+}

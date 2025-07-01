@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Question4() {
+  const [inputStr, setInputStr] = useState('');
+  const [result, setResult] = useState(null);
+
+  const handleClick = () => {
+    if (inputStr === '') return setResult(null);
+    setResult(`"${inputStr}"`);
+  };
   return (
     <div className='question-div'>
       <h2>4번 문제</h2>
@@ -11,16 +18,14 @@ export default function Question4() {
         합니다. 빈 칸을 채워 전체 코드를 완성해주세요.
       </h5>
       <div className='form-basic'>
-        {/* <input type='text' onChange={(e) => setNum(e.target.value)} value={num} placeholder='숫자를 입력해주세요' />
+        <input
+          type='text'
+          onChange={(e) => setInputStr(e.target.value)}
+          value={inputStr}
+          placeholder='문자열을 입력해주세요'
+        />
         <button onClick={handleClick}>출력</button>
-        <div style={{ textAlign: 'left' }}>
-          {result &&
-            result.map((v, idx) => (
-              <p style={{ margin: 0 }} key={idx}>
-                {v}
-              </p>
-            ))}
-        </div> */}
+        <div>{result}</div>
       </div>
     </div>
   );

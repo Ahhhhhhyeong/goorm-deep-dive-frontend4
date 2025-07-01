@@ -4,10 +4,9 @@ import BigO from './big-o/BigO';
 import BigO1 from './Components/BigO1';
 import BigOn from './Components/BigOn';
 import QuestionPage from './questions/QuestionPage';
-import Question1 from './questions/Question1';
 import BigOn2 from './Components/BigOn2';
-import Question2 from './questions/Question2';
 import TimeComplextiy from './Components/TimeComplextiy';
+import GamePage from './mission/GamePage';
 
 function App() {
   return (
@@ -16,6 +15,7 @@ function App() {
         <Link to='/bigo'>빅오표기</Link>
         <Link to='/timecomplextiy'>시간복잡도</Link>
         <Link to='/question'>문제풀이</Link>
+        <Link to='/game'>지뢰게임</Link>
       </nav>
 
       <Routes>
@@ -27,6 +27,7 @@ function App() {
         </Route>
         <Route path='/timecomplextiy' element={<TimeComplextiy />} />
         <Route path='/question' element={<QuestionPage />} />
+        <Route path='/game' element={<GamePage />} />
       </Routes>
     </>
   );

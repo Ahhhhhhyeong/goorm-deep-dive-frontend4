@@ -66,6 +66,16 @@ input {
   padding: 0.3rem;
 }
 
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+th,
+td {
+  border: 1px solid #aaa;
+  background-clip: padding-box;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

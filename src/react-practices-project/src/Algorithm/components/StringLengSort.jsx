@@ -52,6 +52,7 @@ export default function StringLengSort() {
     return sorted;
   };
 
+  //같은 길이의 문자열들 정렬하는 함수
   const quickSort = (arr) => {
     if (arr.length <= 1) return arr;
 

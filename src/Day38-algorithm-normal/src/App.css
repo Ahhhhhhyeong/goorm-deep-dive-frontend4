@@ -25,9 +25,17 @@
   padding: 2rem;
   margin-bottom: 1rem;
 }
-
 .info-p {
-  color: rgb(255, 37, 37);
+  color: #555;
+  font-weight: bold;
+}
+/* 입력된 값이라던가..힌트 보여줄 때 */
+.info-hint {
+  color: #888888;
+}
+
+.answer {
+  color: #ff3030;
   font-weight: bold;
 }
 

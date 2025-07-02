@@ -1,6 +1,13 @@
 import React, { use, useState } from 'react';
 
 const hints = ['apple', 'banana', 'carrot', 'grape', 'melon', 'orange', 'peach'];
+/*
+js 
+알파벳이 아스키코드로 자동 변환하여 비교할 때 아스키코드로 비교
+한글 = 아스키코드표에 없음 -> 유니코드 값으로 자동 변환 해줌
+ * 아스키코드 = 1byte
+ * 유니코드 = 2byte
+*/
 
 export default function Question1() {
   const [inputStr, setInputStr] = useState('');

@@ -10,9 +10,11 @@ export default function Question3() {
     lineSearch: '',
     binarySearch: '',
   });
+  //임의의 랜덤 값 = 화면에 힌트용도로 나타낼거
+  const randomNum = Math.floor(Math.random() * 10000);
 
   useEffect(() => {
-    console.log('생성중');
+    // console.log('생성중');
     //랜덤단어 1개 생성
     const createRandomWord = (length) => {
       const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -25,7 +27,7 @@ export default function Question3() {
     //랜덤 단어 10,000개 배열 생성
     // Array 메서드 중 from() = 새로운 배열 생성. 숫자 시퀀스를 넣어서 해당 숫자길이만큼의 배열을 만들 수 있음
     const wordArray = Array.from({ length: 10000 }, () => createRandomWord(5));
-    console.log('생성한 배열길이: ', wordArray.length, '생성한 배열: ', wordArray);
+    // console.log('생성한 배열길이: ', wordArray.length, '생성한 배열: ', wordArray);
     setArr(wordArray);
   }, []);
 
@@ -94,8 +96,7 @@ export default function Question3() {
       case 'BINARY': {
         console.time('binary');
         try {
-          const newArr = Array.from(fullArr.sort());
-          // const newArr = binarySort(fullArr);
+          const newArr = binarySort(fullArr);
           const search = binarySearch(value, newArr, 0, newArr.length - 1);
           return setResult((prev) => ({
             ...prev,
@@ -106,6 +107,22 @@ export default function Question3() {
           return;
         } finally {
           console.timeEnd('binary');
+        }
+      }
+      case 'BINARY_SORT': {
+        console.time('binary_sort');
+        try {
+          const newArr = Array.from(fullArr).sort();
+          const search = binarySearch(value, newArr, 0, newArr.length - 1);
+          return setResult((prev) => ({
+            ...prev,
+            binarySearch: search,
+          }));
+        } catch (err) {
+          console.error(err);
+          return;
+        } finally {
+          console.timeEnd('binary_sort');
         }
       }
     }
@@ -121,6 +138,9 @@ export default function Question3() {
 각 탐색 방법의 실행 속도를 console.time()으로 비교하세요.`}
       </pre>
       <p className='info-hint'>랜덤으로 생성된 문자열이라 a~z의 문자를 아무렇게나 5자리로 생성했습니다.</p>
+      <p className='info-hint'>
+        {fullArr[randomNum]} :{randomNum}번째 값
+      </p>
       <div className='form-basic'>
         <input
           type='text'
@@ -128,9 +148,11 @@ export default function Question3() {
           value={inputStr}
           onChange={(e) => setInputStr(e.target.value)}
         />
+
         <button onClick={() => handleSearch('LINE')}>선형탐색 시작!</button>
         {result.lineSearch && <p style={{ color: 'red', fontSize: '0.9rem' }}>{result.lineSearch}</p>}
         <button onClick={() => handleSearch('BINARY')}>이진탐색 시작!</button>
+        <button onClick={() => handleSearch('BINARY_SORT')}>이진탐색 시작!(sort메서드 사용)</button>
         {result.binarySearch && <p style={{ color: 'red', fontSize: '0.9rem' }}>{result.binarySearch}</p>}
       </div>
     </div>

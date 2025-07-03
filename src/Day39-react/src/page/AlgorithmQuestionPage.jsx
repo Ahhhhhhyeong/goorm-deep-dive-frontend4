@@ -10,6 +10,8 @@ export default function AlgorithmQuestionPage() {
         <Link to={'question2'}>2번 문제</Link>
         <Link to={'question3'}>3번 문제</Link>
         <Link to={'question4'}>4번 문제</Link>
+        <Link to={'question8'}>8번 문제</Link>
+        <Link to={'question10'}>10번 문제</Link>
       </nav>
       <Outlet />
     </div>

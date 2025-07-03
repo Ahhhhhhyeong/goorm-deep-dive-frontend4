@@ -6,7 +6,7 @@ export default function InsertionSort() {
   // 값을 교체 할 때 사용할 임시 변수
   let temp;
 
-  const insertSortFt = () => {
+  const insertSortFt = (arr) => {
     for (let i = 0; i < test_array.length; i++) {
       let j = i;
 
@@ -19,23 +19,14 @@ export default function InsertionSort() {
         j--;
       }
     }
+    return arr;
   };
-
-  // 함수 시작(정렬시작해라!)
-  insertSortFt();
 
   return (
     <div>
-      <h3>insetSort</h3>
-      <p>{JSON.stringify(test_array)}</p>
+      <h3>삽입 정렬(Insert Sort)</h3>
+      <p>정렬 전 : {JSON.stringify(test_array, null, 2)}</p>
+      <p>정렬 후 : {JSON.stringify(insertSortFt(test_array), null, 2)}</p>
     </div>
   );
 }
-/*
-- 삽입 정렬은 앞에서부터 차례대로 정렬된 부분에 알맞은 위치에 삽입하는 방식
-- 각 숫자를 적절한 위치에 삽입하는 방식
-- 삽입정렬의 장점은 꼭 필요할 때만 위치를 바꾼다.그래서 선택 정렬과 버블 정렬보다는
-  조금 효율적이다
-- 실무에서는 소규모 알고리즘을 작성할 때는 사용이 된다
-- 정렬된 데이터에 값을 추가할 때 삽입 정렬을 주로 사용한다.
-*/

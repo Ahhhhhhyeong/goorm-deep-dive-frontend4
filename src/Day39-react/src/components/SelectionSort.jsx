@@ -5,7 +5,7 @@ export default function SelectionSort() {
   const arr = [5, 2, 4, 10, 8, 1, 3, 6];
 
   // 선택정렬
-  const selectSort = () => {
+  const selectSort = (arr) => {
     for (let i = 0; i < arr.length; i++) {
       let minIdx = i;
 
@@ -18,20 +18,14 @@ export default function SelectionSort() {
       // 위에서 가장 작은 공간의 번호를 가지고 와서 현재 i랑 위치를 교환한다.
       [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];
     }
+    return arr;
   };
 
   return (
     <div>
       <h3>선택정렬</h3>
-      {JSON.stringify(arr, null, 2)}
+      <p>정렬 전 : {JSON.stringify(arr, null, 2)}</p>
+      <p>정렬 후 : {JSON.stringify(selectSort(arr), null, 2)}</p>
     </div>
   );
 }
-/*
- 선택 정렬 
-  - 가장 작은 데이터를 선택해서 앞쪽으로 차례 차례 정렬하는 방식
-  - 배열을 처음부터 끝까지 돌면서 가장 작은 값을 찾아 현재 위치와 교환한다
-  - 시간복잡도 O(n^2), 공간 복잡도는 O(1)로 비교적 간단 하지만 느리다
-  - 선택정렬은 실무에서 잘 안쓰긴 하지만 면접에서 자주 나온다
-  
-*/

@@ -11,6 +11,7 @@ import CosPro from './pages/CosPro';
 import Question7 from './components/Question/Question7';
 import HashPasswordSHA from './components/hashTest/HashPasswordSHA';
 import Question8 from './components/Question/Question8';
+import AlgoCosproPage from './pages/AlgoCosproPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path='/cos' element={<CosPro />}>
           <Route path='question7' element={<Question7 />} />
           <Route path='question8' element={<Question8 />} />
+          <Route path='question1' element={<AlgoCosproPage />} />
         </Route>
       </Routes>
     </>

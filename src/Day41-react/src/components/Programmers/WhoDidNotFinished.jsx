@@ -27,17 +27,17 @@ export default function WhoDidNotFinished() {
         }
       }
     }
-
     answer = Array.from(map.keys())[0];
     return answer;
   }
 
   const handleClick = () => {
     const participant = partic.split(',');
-    console.log(participant);
+    // console.log(participant);
     const completion = complet.split(',');
-    console.log(completion);
+    // console.log(completion);
     const answer = solution(participant, completion);
+
     setResult(answer);
   };
 

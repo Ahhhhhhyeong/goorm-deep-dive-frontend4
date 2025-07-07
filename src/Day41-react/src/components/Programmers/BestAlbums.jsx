@@ -8,21 +8,32 @@ export default function BestAlbums() {
 
   function solution(genres, plays) {
     let answer = [];
+    const genreTotal = {};
 
-    const songs = new Map();
-    genres.forEach((v, idx) => {
-      if (!songs.has(v)) {
-        songs.set(v, new Map());
+    //장르별 플레이수
+    for (let i = 0; i < genres.length; i++) {
+      if (!Object.keys(genreTotal).includes(genres[i])) {
+        genreTotal[genres[i]] = 0;
       }
-      songs.get(v).set(idx, plays[idx]);
-    });
-    // console.log(songs);
+      genreTotal[genres[i]] += Number(plays[i]);
+    }
 
-    //제일 각 장르별로 제일 큰 value의 인덱스 값이 큰 수대로 정렬
-    songs.forEach((v, key) => {
-      console.log('key: ', key);
-      console.log('val: ', v);
-    });
+    //장르 플레이수 내림차수 정렬
+    const genreRank = Object.entries(genreTotal)
+      .sort(([, a], [, b]) => b - a)
+      .map(([k, v]) => k);
+
+    //베스트노래 탐색
+    for (const genre of genreRank) {
+      let temp = [];
+      for (let i = 0; i < genres.length; i++) {
+        if (genres[i] === genre) {
+          temp.push([i, plays[i]]);
+        }
+      }
+      const sorted = temp.sort((a, b) => b[1] - a[1]).slice(0, 2);
+      answer.push(...sorted.map((music) => music[0]));
+    }
 
     return answer;
   }

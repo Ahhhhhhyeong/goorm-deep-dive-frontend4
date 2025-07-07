@@ -8,6 +8,7 @@ export default function CosPro() {
       <nav className='navi'>
         <Link to={'question7'}>영어강의 수강자</Link>
         <Link to={'question8'}>펠린드롭</Link>
+        <Link to={'question1'}>cospro pdf문제</Link>
       </nav>
       <Outlet />
     </div>

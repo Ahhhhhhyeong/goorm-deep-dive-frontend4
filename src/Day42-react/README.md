@@ -1,12 +1,145 @@
-# React + Vite
+# [Day42] 25.07.08 배운 내용 정리
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📥 Redux
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 전역 상태를 다시 관리(지휘)하는 외부 라이브러리
+>
+> 컨텍스트랑 유사함
 
-## Expanding the ESLint configuration
+- 여러 컴포넌트들이 공유해야하는 데이터를 한 곳에서 관리하는 **중앙 저장소(Store)**를 만들어주는 도구
+- 가장 오래된 리엑트 상태 관리 라이브러리 중 하나
+- 상태를 변경하려면 반드시 `action -> reducer -> store` 과정을 거처야 함
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### 🌊 전역 상태 흐름
+
+- store : 앱 전체 상태를 담는 중앙 저장소
+- slice : 상태(state) + 상태 변경 함수(reducer)를 하나로 관리하는 단위
+- dispatch : 액션을 발생시키는 함수
+- useSelector : store에서 현재 상태를 가져오는 함수
+
+#### ♻️ 실행 순서
+
+1. 사용자가 어떤 행동(클릭 등) 함
+2. Action 생성 (상태를 바꾼다고 알림)
+3. Dispatch 함 -> Action이 Store로 전달
+4. reducer가 action을 보고 상태를 업데이트
+5. store가 업데이트 된 상태를 컴포넌트에 전달
+
+### ❓왜 사용하는지
+
+- 상태 흐름이 명확함
+- 복잡한 앱에서도 상태 추적이 쉬움
+- 강력한 미들웨어 생태계
+
+### 🧩 언제 사용하면 좋을지?
+
+- 앱의 **규모가 크고**, **상태가 여러 컴포넌트에서 공유**하거나 **비동기 처리**와 **디버깅이 중요한 프로젝트**에 적합
+- ⚠️ 하지만 Redux는 무거워서 경량화 된 것을 사용하고 싶어함
+  - `npm install @reduxjs/toolkit react-redux`
+
+---
+
+### 📌 다른 상태관리 라이브러리
+
+#### 🧩 `reduxjs/toolkit`
+
+- **boilerplate** : 반복적으로 복붙하는 구조
+- boilerplate를 줄이고, 적은 코드로 리덕스와 동일한 결과를 나타내기 위해 사용
+- 타입스크립트와도 호환성이 좋음
+- 실무 프로젝트에서 적합하고 규칙 기반의 상태관리를 쉽게 구현할 수 있음
+
+#### 🧩 `Recoil`
+
+- 페이스북에서 만든 리엑트 전용 상태관리 라이브러리
+- React의 useState처럼 다루지만 전역 상태처럼 공유가 가능하다
+- 상태를 나눌 때 atom 단위로 나누고 여러 컴포넌트에서 이 atom 사용할 수 있다
+- 리엑트 이외의 프로젝트(프레임워크)와 호환성이 좋지 않다
+
+#### 🧩 `Zustand`
+
+- Context API를 대체할 수 있는 가벼운 상태 관리 라이브러리
+- Hook 기반 구조(useStore)로 매우 직관적
+- 리덕스보다 가볍고, 설정이 거의 없다
+  - 코드양도 적다
+  - 학습하기 쉬움
+- 컴포넌트 간 상태 공유가 매우 쉬움
+- 작은 프로젝트나 빠른 MVP 구조(서비스)를 만들 때 사용된다
+
+---
+
+## 📑 DDD vs CBD
+
+> 개발 전 계획을 세우기 위해서 자주 나오는 용어
+
+#### 📒 DDD (Domain Driven Design)
+
+- 업무(Domain) 중심 시스템 설계
+- 복잡한 B2B서비스, 금융, 보험, ERP 에서 많이 사용된다
+- NestJs, Springboot과 같이 백엔드 쪽에서 설계를 할 때 사용하는 기법
+
+#### 📒 CBD (Component Based Development)
+
+- 컴포넌트 기반 개발
+- 부품 처럼 조립 가능한 컴포넌트 단위로 개발하는 기법!
+- 리엑트에서 `<Button />` `<Card />` `<Modal />` 처럼 작은 UI 단위로 쪼개는 방식으로 설계
+- 기능 뿐 아니라 UI, 서비스 기능, API단위도 컴포넌트 처럼 나눌 수 있다.
+
+#### 🔗 프론트엔드 개발 전
+
+> 아래의 요소들을 미리 정의해두면 좋다.
+
+- 컴포넌트 이름 (ex. UserProfile)
+- 컴포넌트 설명 (ex. 사용자의 이름과 프로필 이미지를 표시하며 클릭시 상세 페이지로 이동한다)
+- 컴포넌트 주요 기능 (ex. 프로필 이미지 출력, 사용자 이름 출력)
+- props 정의 (ex. name - string - 필수여부)
+
+```perl
+# 예시
+UserProfile
+ L Image  # 프로필 이미지
+ L Name   # 텍스트
+
+Style Guide
+ L 원형 프로필 사진 너비 : 80px
+ L 이름은 굵은 고딕체
+ L 모바일 기준 100% 반응형 처리
+
+관련 이슈 / todo
+ L 이미지 로딩 실패 시 처리방법
+ L dark mode 스타일 추가 예정
+
+```
+
+- 버전 관리
+  - 어떤 파일이나 기능, 문서가 몇 번째 수정인지 기록하는 시스템
+
+문서 버전 예시
+
+```jsx
+//UserProfile.jsx
+/* <수정/생성내역 관리 doc>
+[버전]     [생성/수정일]      [작성자]      [수정/생성내역]
+v1.0      20xx-xx-xx      Minsu       기본 프로필 카드 컴포넌트 생성(name, image, props포함)
+v1.1      20xx-xx-xx      YoungHee    onClick 이벤트를 props 추가
+v1.2      20xx-xx-xx      YoungHee    image가 없을 때 기본 이미지 처리 추가(에러)
+...
+v2.0      20xx-xx-xx      Minsu       새로운 피드 생성(기능 확장)  
+v2.1.0    20xx-xx-xx      Minsu       피드에 좋아요 기능 추가
+v2.1.1    20xx-xx-xx      Minsu       피드 이미지가 안나오는 문제 수정 (버그 패치)
+v2.1.2    20xx-xx-xx      Minsu       모바엘에서 피드 텍스트가 잘리는 현상 수정
+*/
+```
+
+- 전체 구조 개편, 디자인변경, 새기능 => 큰 개편은 앞의 자리 수가 커짐
+- 실무에서도 git, 태그나 릴리즈 기록할 때도 이 방식을 사용함.
+
+- `v2.1.2`의 각 숫자 의미
+  | 버전 | 업데이트 사항 |
+  | --- | --- |
+  | 첫번째 2 (주 버전) | 큰 기능 추가 하거나 변경,호환성 깨지는 업데이트 |
+  | 두번째 1 (부 버전) | 새로운 기능들 추가 |
+  | 세번째 2 (패치 버전) | 버그 수정, 성능 개선, 사소한 변경 |
+
+---

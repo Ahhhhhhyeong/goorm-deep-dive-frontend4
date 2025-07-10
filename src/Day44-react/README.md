@@ -16,6 +16,8 @@
 | 디렉터리 구조  | 명확하고 모듈화               | 자유롭고 단순         |
 | 상태 관리 방식 | Slice 중심 (Redux Toolkit 등) | Hook 기반 함수형 작성 |
 
+[상세한 이론 더 보기](https://github.com/Ahhhhhhyeong/goorm-deep-dive-frontend4/tree/main/src/Day42-react-redux)
+
 ---
 
 ### 코드로 알아보는 차이점

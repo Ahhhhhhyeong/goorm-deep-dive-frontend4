@@ -25,11 +25,33 @@ import SortPracties from './Algorithm/page/SortPractices.jsx';
 import QuickSortNumArr from './Algorithm/components/QuickSortNumArr.jsx';
 import MinHeap from './Algorithm/components/MinHeap.jsx';
 import StringLengSort from './Algorithm/components/StringLengSort.jsx';
+import TodoList from './pages/TodoList.jsx';
+import { Provider } from 'react-redux';
+import store from './app/store.js';
+import TodoContent from './components/Todos/TodoContent.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />, // App은 단순 컴포넌트
+  },
+  {
+    path: '/todo',
+    element: <TodoList />,
+    children: [
+      {
+        index: true, // /todo
+        element: <TodoContent filter='all' />,
+      },
+      {
+        path: 'active',
+        element: <TodoContent filter='active' />,
+      },
+      {
+        path: 'complete',
+        element: <TodoContent filter='complete' />,
+      },
+    ],
   },
   {
     path: '/login',
@@ -145,6 +167,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <CartProvider>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </CartProvider>
 );

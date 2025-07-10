@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@layer components {
+  /* 투두 리스트 이전에 만들어둔 css때문에 그냥 들고옴 */
+  .todoWrap {
+    max-width: 1280px;
+    min-width: 980px;
+    /* height: 100vh; */
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .todoCard {
+    width: 45vh;
+    margin: 0 auto;
+  }
+
+  .todoCardDisplay {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border: 1px solid pink;
+  }
+
+  .todoCardDisplay .displayOption {
+    display: flex;
+  }
+
+  .todoCardDisplay .displayOption a {
+    text-decoration: none;
+    font-weight: bold;
+    color: orange;
+  }
+
+  .todoContent {
+    flex-direction: column;
+  }
+
+  .modeBtn {
+    border: none;
+    background-color: transparent;
+  }
+  /* todo input text */
+  .todoText {
+    border: 1px solid #ddd;
+    border-radius: 3px 0px 0px 3px;
+    padding: 0.3rem;
+    width: 19rem;
+  }
+  .inputBtn {
+    border: 1px solid orange;
+    background-color: orange;
+    border-radius: 0px 3px 3px 0px;
+    padding: 0.3rem 1.1rem;
+    color: white;
+    font-weight: bold;
+  }
+
+  .tabContents {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .deleteBtn {
+    border-radius: 50%;
+    font-size: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: unset;
+    border: 1px solid salmon;
+  }
+}

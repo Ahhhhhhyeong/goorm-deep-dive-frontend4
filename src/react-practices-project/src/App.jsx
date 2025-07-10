@@ -32,6 +32,10 @@ function App() {
       <Link to={'/sortprcd'} className='text-blue-400 hover:text-blue-800'>
         06월 30일 실습
       </Link>
+      <h1 className='text-3xl font-bold'>07/09 실습 - 투두리스트</h1>
+      <Link to={'/todo'} className='text-blue-400 hover:text-blue-800'>
+        07월 09일 실습 (투두리스트)
+      </Link>
     </div>
   );
 }

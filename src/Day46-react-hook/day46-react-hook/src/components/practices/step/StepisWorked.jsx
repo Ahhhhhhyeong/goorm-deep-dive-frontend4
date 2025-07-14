@@ -1,14 +1,16 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import useStepNavigate from '../hooks/useStepNavigate';
 
 export default function StepisWorked() {
-  const navigate = useNavigate();
   const {
     register,
     watch,
     formState: { errors },
   } = useFormContext();
+
+  const { goToNext, goToPrev } = useStepNavigate();
+
   return (
     <div className='space-y-4'>
       {/* 경력 유무 폼 내용 */}
@@ -34,13 +36,13 @@ export default function StepisWorked() {
       <div className='flex justify-between pt-4'>
         <button
           type='button'
-          onClick={() => navigate('/notice-2')}
+          onClick={() => goToPrev('/notice-2')}
           className='bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-md transition duration-200'>
           이전
         </button>
         <button
           type='button'
-          onClick={() => navigate('/notice-4')}
+          onClick={() => goToNext('/notice-4', ['experience'])}
           className='bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200'>
           다음
         </button>

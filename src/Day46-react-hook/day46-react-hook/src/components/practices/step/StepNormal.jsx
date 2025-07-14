@@ -1,14 +1,15 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import useStepNavigate from '../hooks/useStepNavigate';
 
 export default function StepNormal() {
-  const navigate = useNavigate();
   const {
     register,
     watch, //실시간 입력값 확인
     formState: { errors },
   } = useFormContext();
+
+  const { goToNext } = useStepNavigate();
 
   return (
     <div className='space-y-4'>
@@ -41,7 +42,7 @@ export default function StepNormal() {
       <div className='flex justify-end pt-4'>
         <button
           type='button'
-          onClick={() => navigate('/notice-2')}
+          onClick={() => goToNext('/notice-2', ['name', 'age'])}
           className='bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200'>
           다음
         </button>

@@ -36,6 +36,10 @@ function App() {
       <Link to={'/todo'} className='text-blue-400 hover:text-blue-800'>
         07월 09일 실습 (투두리스트)
       </Link>
+      <h1 className='text-3xl font-bold'>알고리즘</h1>
+      <Link to={'/algorithms'} className='text-blue-400 hover:text-blue-800'>
+        알고리즘
+      </Link>
     </div>
   );
 }

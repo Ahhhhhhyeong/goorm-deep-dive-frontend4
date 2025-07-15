@@ -29,6 +29,8 @@ import TodoList from './pages/TodoList.jsx';
 import { Provider } from 'react-redux';
 import store from './app/store.js';
 import TodoContent from './components/Todos/TodoContent.jsx';
+import AlgorithmPage from './Algorithm/page/AlgorithmPage.jsx';
+import CosPro0714 from './Algorithm/page/CosPro0714.jsx';
 
 const router = createBrowserRouter([
   {
@@ -162,6 +164,11 @@ const router = createBrowserRouter([
         element: <StringLengSort />,
       },
     ],
+  },
+  {
+    path: '/algorithms',
+    element: <AlgorithmPage />,
+    children: [{ path: '0714', element: <CosPro0714 /> }],
   },
 ]);
 

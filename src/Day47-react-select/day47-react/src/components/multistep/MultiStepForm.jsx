@@ -7,9 +7,16 @@ import Step3 from './Step3_Experience';
 import Step4 from './Step4_Introduce';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useFormStore } from '../../stores/formStore';
+import { components } from 'react-select';
+import MultiStepNav from './MultiStepNav';
 
 // 2. 단계별로 컴포넌트 배열
-const steps = [Step1, Step2, Step3, Step4];
+const steps = [
+  { component: Step1, label: '❶ 기본정보' },
+  { component: Step2, label: '❷ 희망부서' },
+  { component: Step3, label: '❸ 경력유무' },
+  { component: Step4, label: '❹ 자기소개' },
+];
 
 export default function MultiStepForm() {
   //3. 리액트 훅 폼 초기화
@@ -18,7 +25,7 @@ export default function MultiStepForm() {
   //5. 쥬드텐드의 저장소에서 함수,상태값을 이용할 수있도록 저장소 가져오기
   const { currentStep, nextStep, prevStep, formData, setFormData } = useFormStore();
 
-  const CurrentComponent = steps[currentStep];
+  const CurrentComponent = steps[currentStep].component;
 
   //7.폼 이벤트 함수 작성
   /**
@@ -43,7 +50,15 @@ export default function MultiStepForm() {
   // 4. 하위 컴포넌트들에서 useFormContext() 로 값 공유해서 사용하게 만들겠다
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className='p-6 max-w-md mx-auto bg-white shadow space-y-4 mt-8'>
+      <form onSubmit={methods.handleSubmit(onSubmit)} className='p-6 max-w-lg mx-auto bg-white shadow space-y-4 mt-8'>
+        {/* 모든 단계를 보여줌 */}
+        <nav className='flex space-x-4 mb-6'>
+          {steps.map((item, idx) => (
+            <MultiStepNav key={idx} isCurrent={idx === currentStep}>
+              {item.label}
+            </MultiStepNav>
+          ))}
+        </nav>
         {/* 6. 현재 단계의 컴포넌트 렌더링  */}
         <CurrentComponent />
 

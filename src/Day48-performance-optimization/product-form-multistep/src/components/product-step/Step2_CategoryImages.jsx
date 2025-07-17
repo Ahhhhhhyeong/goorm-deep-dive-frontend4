@@ -1,0 +1,87 @@
+import React, { useEffect, useState } from 'react';
+import { useFormContext, useWatch } from 'react-hook-form';
+import { useProductStore } from '../../stores/productStore';
+
+// 이미지 파일 base64로 변환
+const toBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result); // base64 문자열
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+
+export default function Step2() {
+  const {
+    register,
+    control,
+    formState: { errors },
+  } = useFormContext();
+
+  const images = useWatch({ control, name: 'images' });
+  const [previewUrls, setPreviewUrls] = useState([]);
+
+  // 이미지 업로드 시 base64로 변환 후 zustand에 저장(이미지는 따로 저장)
+  useEffect(() => {
+    if (images && images.length > 0) {
+      const fileArry = Array.from(images);
+      const urls = fileArry.map((file) => URL.createObjectURL(file));
+      setPreviewUrls(urls);
+
+      // Clean up URLs when component unmounts or images change
+      return () => urls.forEach((url) => URL.revokeObjectURL(url));
+    } else {
+      setPreviewUrls([]);
+    }
+  }, [images]);
+
+  return (
+    <div className='max-w-md mx-auto p-6'>
+      <div className='mb-6'>
+        <h2 className='text-2xl font-bold text-gray-900'>Product Form</h2>
+        <p className='text-gray-500 text-sm mt-1'>Step 2: Category & Images</p>
+      </div>
+
+      <div className='space-y-4'>
+        {/* Images */}
+        <div>
+          <label className='block text-sm font-medium text-gray-900 mb-1'>Product Images</label>
+          <input
+            type='file'
+            multiple
+            accept='image/*'
+            {...register('images')}
+            className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500'
+          />
+          {/* Image Preview Area */}
+          <div className='mt-4 flex flex-wrap gap-4'>
+            {previewUrls.map((url, idx) => (
+              <img
+                key={idx}
+                src={url}
+                alt={`Preview ${idx + 1}`}
+                className='w-24 h-24 object-cover border rounded-md'
+              />
+            ))}
+            {/* View Photos Larger */}
+          </div>
+        </div>
+
+        {/* Category */}
+        <div>
+          <label className='block text-sm font-medium text-gray-900 mb-1'>Category *</label>
+          <select
+            {...register('category', { required: 'Category is required' })}
+            className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500'>
+            <option value=''>Select Category</option>
+            <option value='electronics'>Electronics</option>
+            <option value='clothing'>Clothing</option>
+            <option value='books'>Books</option>
+            <option value='home'>Home & Garden</option>
+          </select>
+          {errors.category && <p className='text-red-500 text-sm mt-1'>{errors.category.message}</p>}
+        </div>
+      </div>
+    </div>
+  );
+}

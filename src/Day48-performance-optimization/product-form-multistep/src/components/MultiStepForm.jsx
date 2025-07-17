@@ -29,8 +29,8 @@ export default function MultiStepForm() {
   const { productData, setPrdData } = useProductStore();
 
   // onSubmit 함수
-  const onSubmit = async (data) => {
-    console.log('Form submitted with data:', data);
+  const onSubmit = (data) => {
+    // console.log('Form submitted with data:', data);
     setPrdData(data);
     if (currentIndex === steps.length - 1) {
       // 마지막 단계 - 최종 제출
@@ -63,14 +63,14 @@ export default function MultiStepForm() {
         {/* 페이지 이동 버튼 */}
         <div className='flex justify-center-safe item-center gap-2'>
           {/* 이전 버튼 영역 */}
-          {currentIndex > 0 && (
-            <button
-              type='button'
-              onClick={() => swiperRef.current?.slidePrev()}
-              className='px-6 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded-lg transition-colors'>
-              Prev
-            </button>
-          )}
+          {/* {currentIndex > 0 && (
+          )} */}
+          <button
+            type='button'
+            onClick={() => swiperRef.current?.slidePrev()}
+            className='px-6 py-2 bg-gray-400 hover:bg-gray-600 text-white rounded-lg transition-colors'>
+            Prev
+          </button>
           {/* 다음/제출 버튼 영역 */}
           <button
             type='submit' //위치가 중요함.. form에 있어야 submit이 됨...

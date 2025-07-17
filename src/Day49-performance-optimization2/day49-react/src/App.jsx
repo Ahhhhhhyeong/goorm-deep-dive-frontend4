@@ -3,19 +3,43 @@ import DebounceTest from './components/DebounceTest';
 import LodashTest1 from './components/lodashTest/LodashTest';
 import LodashTest2 from './components/lodashTest/LodashTest2';
 import LodashTest3 from './components/lodashTest/LodashTest3';
-
+import ThorttlingTest1 from './components/ThrottlingTest/ThorttlingTest1';
+import ThorttlingTest2 from './components/ThrottlingTest/ThorttlingTest2';
+import UseCallBackTest from './components/useCallBackTest/UseCallBackTest';
+import UesMemoTest from './components/useMemoTest/UesMemoTest';
+import './App.css';
 function App() {
   return (
     <>
-      <h2>Debounce 없는 예제</h2>
-      <DebonceAn />
-      <hr />
-      <DebounceTest />
-      <hr />
-      <h2>lodash 사용하는 예제</h2>
-      <LodashTest1 />
-      <LodashTest2 />
-      <LodashTest3 />
+      <div className='box'>
+        <h2>Debounce 없는 예제</h2>
+        <DebonceAn />
+        <hr />
+        <DebounceTest />
+      </div>
+
+      <div className='box'>
+        <h2>lodash 사용하는 예제</h2>
+        <LodashTest1 />
+        <LodashTest2 />
+        <LodashTest3 />
+      </div>
+
+      <div className='box'>
+        <h2>Thorttling 사용 예제</h2>
+        {/* <ThorttlingTest1 /> */}
+        <ThorttlingTest2 />
+      </div>
+
+      <div className='box'>
+        <h2>useCallBack 사용 예제</h2>
+        <UseCallBackTest />
+      </div>
+
+      <div className='box'>
+        <h2>useMemo 사용 예제</h2>
+        <UesMemoTest />
+      </div>
     </>
   );
 }

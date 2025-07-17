@@ -1,6 +1,7 @@
 import React from 'react';
-import { useFormContext } from 'react-hook-form';
-import { useProductStore } from '../../stores/productStore';
+import { Controller, useFormContext } from 'react-hook-form';
+//import { useProductStore } from '../../stores/productStore';
+import CheckFormComponent from './CheckFormComponent';
 
 export default function Step3() {
   const {
@@ -9,7 +10,7 @@ export default function Step3() {
     formState: { errors },
   } = useFormContext();
 
-  const { productData } = useProductStore();
+  // const { productData } = useProductStore();
 
   return (
     <div className='max-w-mb mx-auto p-6'>
@@ -30,12 +31,11 @@ export default function Step3() {
         <div>
           <label className='block text-sm font-medium text-gray-700 mb-2'>Color</label>
           <div className='flex flex-wrap gap-3 border border-zinc-300 p-3 rounded'>
-            {colors.map((color, idx) => (
-              <label key={`${color}-${idx}`} className='flex items-center cursor-pointer'>
-                <input type='checkbox' className='w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500' />
-                <span className='ml-2 text-sm text-gray-700'>{color}</span>
-              </label>
-            ))}
+            <Controller
+              name='color'
+              control={control}
+              render={({ field }) => <CheckFormComponent colors={colors} field={field} />}
+            />
           </div>
         </div>
       </div>

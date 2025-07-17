@@ -2,15 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { useProductStore } from '../../stores/productStore';
 
-// 이미지 파일 base64로 변환
-const toBase64 = (file) =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result); // base64 문자열
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-
 export default function Step2() {
   const {
     register,
@@ -19,16 +10,16 @@ export default function Step2() {
   } = useFormContext();
 
   const images = useWatch({ control, name: 'images' });
-  const [previewUrls, setPreviewUrls] = useState([]);
+  // const [previewUrls, setPreviewUrls] = useState([]);
+  const { previewUrls, setPreviewUrls } = useProductStore();
 
-  // 이미지 업로드 시 base64로 변환 후 zustand에 저장(이미지는 따로 저장)
+  // 이미지업로드
   useEffect(() => {
     if (images && images.length > 0) {
       const fileArry = Array.from(images);
       const urls = fileArry.map((file) => URL.createObjectURL(file));
       setPreviewUrls(urls);
-
-      // Clean up URLs when component unmounts or images change
+      // console.log('urls: ', urls);
       return () => urls.forEach((url) => URL.revokeObjectURL(url));
     } else {
       setPreviewUrls([]);
@@ -43,8 +34,10 @@ export default function Step2() {
       </div>
 
       <div className='space-y-4'>
-        {/* Images */}
-        <div>
+        {
+          // Images
+        }
+        {/*  <div>
           <label className='block text-sm font-medium text-gray-900 mb-1'>Product Images</label>
           <input
             type='file'
@@ -53,21 +46,27 @@ export default function Step2() {
             {...register('images')}
             className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500'
           />
-          {/* Image Preview Area */}
+          {// Image Preview Area
+           // useState로 관리할 때는 프리뷰가 떴는데, zustant로 관리하니까 안됨..왜지?
+          }
           <div className='mt-4 flex flex-wrap gap-4'>
-            {previewUrls.map((url, idx) => (
+            {previewUrls?.map((url, idx) => (
               <img
                 key={idx}
                 src={url}
                 alt={`Preview ${idx + 1}`}
                 className='w-24 h-24 object-cover border rounded-md'
+                onLoad={() => console.log('Image loaded:', url)}
+                onError={(e) => console.log('Image error:', url, e)}
               />
             ))}
-            {/* View Photos Larger */}
+            {// View Photos Larger 
+            }
           </div>
         </div>
 
-        {/* Category */}
+        {/* Category }
+        */}
         <div>
           <label className='block text-sm font-medium text-gray-900 mb-1'>Category *</label>
           <select

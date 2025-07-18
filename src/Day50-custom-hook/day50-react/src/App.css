@@ -1,0 +1,13 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.box {
+  border: 1px solid #555;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+}

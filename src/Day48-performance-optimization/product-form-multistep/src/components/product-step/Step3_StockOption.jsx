@@ -1,7 +1,7 @@
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 //import { useProductStore } from '../../stores/productStore';
-import CheckFormComponent from './CheckFormComponent';
+import CheckFormComponent from '../inputComponents/CheckFormComponent';
 
 export default function Step3() {
   const {

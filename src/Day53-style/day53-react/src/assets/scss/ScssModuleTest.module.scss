@@ -1,0 +1,38 @@
+// ScssModuleTest.module.scss
+
+// 1. active 상태일 때 배경색 변경
+.box {
+  padding: 2.5rem;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.active {
+  background-color: paleturquoise;
+}
+
+// 2. dark 여부에 따라 다크 테마 적용
+.card {
+  padding: 24px;
+  background: white;
+  color: black;
+  border-radius: 12px;
+}
+
+.dark {
+  background: #1f2937;
+  color: white;
+}
+// 3. 선택된 항목 강조(selected)
+.tab {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.selected {
+  background: #60a5fa;
+  color: white;
+  font-weight: bold;
+}

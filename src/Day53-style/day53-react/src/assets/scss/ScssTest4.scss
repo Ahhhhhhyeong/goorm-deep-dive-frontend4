@@ -1,0 +1,31 @@
+$theme: dark;
+
+.box {
+  padding: 2rem;
+
+  @if $theme == light {
+    background-color: white;
+    color: black;
+  } @else if $theme == dark {
+    background-color: #111;
+    color: white;
+  } @else {
+    background-color: #ccc;
+    color: slateblue;
+  }
+}
+
+// @for을 이용해서 map() 스타일 사용
+@for $num from 1 through 5 {
+  .box-#{$num} {
+    width: 3rem * $num;
+    height: 3rem;
+    @if $theme == light {
+      background-color: pink;
+    } @else if $theme == dark {
+      background-color: blue;
+    } @else {
+      background-color: blueviolet;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+// ScssTest1.scss
+
+// 변수를 이용해서 scss 사용하기
+$title-color: orange;
+
+.title {
+  color: $title-color;
+}

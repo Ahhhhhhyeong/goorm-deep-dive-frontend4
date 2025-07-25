@@ -1,0 +1,28 @@
+/* 
+SCSS
+ 
+$main-color: pink;  
+
+.button {
+  background-color: $main-color;
+  padding: 10px;
+  
+  &:hover{
+    background-color: darken($main-color);
+  } 
+}
+
+-------------
+SASS
+$main-color: pink
+
+.button 
+  background-color: $main-color
+  padding: 10px
+  
+  &:hover
+    background-color: darken($main-color)
+   
+=> 파이썬 처럼 들여쓰기로 구분
+
+*/

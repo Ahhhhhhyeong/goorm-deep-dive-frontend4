@@ -1,0 +1,66 @@
+/*Button 컴포넌트를 만들고, size가 small, medium, large일 때 
+각각 다른 padding과 font-size가 적용되도록 만들어보세요.*/
+// _Button.scss
+$btn-primary-color: #3498db;
+$btn-danger-color: #e74c3c;
+$btn-success-color: #2ecc71;
+
+$btn-small-size: 0.5rem 1rem;
+$btn-medium-size: 1rem 1.5rem;
+$btn-large-size: 1.5rem 2rem;
+
+$btn-small-font: 0.8rem;
+$btn-medium-font: 1.1rem;
+$btn-large-font: 1.5rem;
+
+@mixin btn-base {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+  &:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn {
+  @include btn-base;
+
+  &-primary {
+    background-color: $btn-primary-color;
+    color: white;
+  }
+
+  &-danger {
+    background-color: $btn-danger-color;
+    color: white;
+  }
+
+  &-success {
+    background-color: $btn-success-color;
+    color: white;
+  }
+
+  &-small {
+    padding: $btn-small-size;
+    font-size: $btn-small-font;
+  }
+
+  &-medium {
+    padding: $btn-medium-size;
+    font-size: $btn-medium-font;
+  }
+
+  &-large {
+    padding: $btn-large-size;
+    font-size: $btn-large-font;
+  }
+}

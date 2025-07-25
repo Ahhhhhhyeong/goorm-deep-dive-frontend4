@@ -8,7 +8,7 @@ export default function InputComponents({
   handleInputChange,
 }) {
   return (
-    <>
+    <div>
       <label>{label}</label>
       <input
         className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
@@ -17,6 +17,6 @@ export default function InputComponents({
         value={value}
         onChange={handleInputChange}
       />
-    </>
+    </div>
   );
 }

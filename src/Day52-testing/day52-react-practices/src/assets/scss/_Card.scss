@@ -1,0 +1,16 @@
+@use 'sass:color';
+
+$bg-color: #9be2b9;
+
+.card-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+@for $num from 1 through 4 {
+  .card-#{$num} {
+    width: 3rem * $num;
+    height: 3rem * $num;
+    background-color: color.scale($bg-color, $lightness: -10% * $num);
+  }
+}

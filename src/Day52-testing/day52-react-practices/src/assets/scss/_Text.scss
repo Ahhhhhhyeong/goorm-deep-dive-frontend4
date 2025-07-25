@@ -1,0 +1,12 @@
+// List Data
+$text-color: (
+  h1: #fa8072,
+  h2: #40e0d0,
+  h3: #7b68ee,
+);
+
+@each $text, $color in $text-color {
+  .heading-#{$text} {
+    color: $color;
+  }
+}

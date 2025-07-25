@@ -7,12 +7,18 @@ export default function BasicTogglePage() {
 
   return (
     <div>
-      <h2 className='text-lg font-bold my-4'>BasicTogglePage</h2>
+      <h2>BasicTogglePage</h2>
 
-      <div className='flex gap-2'>
-        <ButtonComponents onClick={toggle}>열기/닫기</ButtonComponents>
-        <ButtonComponents onClick={setTrue}>강제로 열기</ButtonComponents>
-        <ButtonComponents onClick={setFalse}>강제로 닫기</ButtonComponents>
+      <div>
+        <ButtonComponents variant='primary' size='large' onClick={toggle}>
+          열기/닫기
+        </ButtonComponents>
+        <ButtonComponents variant='success' size='medium' onClick={setTrue}>
+          강제로 열기
+        </ButtonComponents>
+        <ButtonComponents variant='danger' size='small' onClick={setFalse}>
+          강제로 닫기
+        </ButtonComponents>
       </div>
 
       {flag && (

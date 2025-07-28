@@ -1,0 +1,12 @@
+/*
+main.scss 가장 먼저 import해서 
+전체 앱에 스타일 초기화를 적용하는데 사용
+*/
+
+@use './reset';
+@use './variables';
+@use './mixins';
+
+body {
+  font-family: variables.$font-base;
+}

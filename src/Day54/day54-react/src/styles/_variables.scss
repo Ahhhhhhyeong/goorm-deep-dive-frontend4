@@ -1,0 +1,16 @@
+/*
+변수를 저장하는 파일
+디자인에서 자주 쓰는 값들을 미리 이름을 붙여 저장
+*/
+
+$primary-color: #3498db;
+$font-base: 'Helvetica, sans-serif';
+$padding-base: 1rem;
+
+//- 추가 적인 내용(card를 변수화)
+$card-boarder: 1px solid $primary-color;
+$card-radius: 10px;
+$card-width: 200px;
+$card-bg-color: #ccc;
+$card-transition-time: 0.2s;
+$card-hover-offset: 5px;

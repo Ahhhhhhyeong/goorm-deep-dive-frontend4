@@ -1,0 +1,20 @@
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #3498db;
+}
+
+.btn-disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}

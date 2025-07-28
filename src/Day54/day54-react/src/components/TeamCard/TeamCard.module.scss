@@ -1,0 +1,70 @@
+// 파일명: TeamCard.module.scss
+
+// @import '../../styles/mixins.scss';
+// @import '../../styles/variables.scss';
+@use '../../styles/mixins' as mixins;
+@use '../../styles/variables' as vars;
+
+.card {
+  //mixin을 이용해서 세로방향 가운데 정렬
+  @include mixins.flex-center(column);
+  // 테두리의 색상을 scss변수로 적용!
+  border: 1px solid vars.$primary-color;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    // 마우스를 올리면 위로 5px 이동 (살짝 뜨는 효과)
+    transform: translateY(-5px);
+  }
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: vars.$primary-color;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+// 변수 사용 패턴을 사용하는 방법
+/*
+@use 별칭이나 경로명을 접근할 수 있도록 해줌
+@import를 사용하면 네이밍 충돌이 발생할 수 있음
+@use를 권장
+*/
+// @use '../../styles/variables' as vars;
+// @use '../../styles/mixins' as mixins;
+
+// .card {
+//   @include mixins.flext-center(column);
+
+//   // 변수로 변경
+//   border: vars.$card-border;
+//   border-radius: vars.$card-radius;
+//   padding: vars.$padding-base;
+//   width: vars.$card-width;
+//   text-align: center;
+//   background: vars.$card-bg-color;
+//   transition: transform vars.$card-transition-time ease;
+
+//   &:hover {
+//     //음수 값 일경우에는 변수에 있는 px앞에 -를 붙여도 되지만 변수 자체를
+//     // 음수로 선언해도 된다.
+//     transform: translateY(-vars.$card-hover-offset);
+//   }
+// }

@@ -1,0 +1,20 @@
+//_reset.scss
+/* 기본 셋팅
+- 브라우저마다 기본으로 제공하는 여백, 패딩, 폰트사이즈, 해딩 태그 등 스타일이 다름
+- 스타일의 차이를 제거해서 모든 요소가 동일한 초기 상태에서 시작을 위해 style reset을 함 
+- 코드가 간결하고 이해하기 쉬움
+- 단점도 있는데 기억이 안남
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  // 너비, 높이 계산시 테두리와 패딩을 포함
+  box-sizing: border-box;
+}
+
+/*
+실무에서 좋아하는 코드스타일이나 라이브러리
+modern-css-reset
+PostCss Plugin, normalize, sanitize.css 등등
+*/

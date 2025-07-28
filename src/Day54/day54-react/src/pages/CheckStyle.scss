@@ -1,0 +1,18 @@
+@use '../styles/variables' as vars;
+@use '../styles/mixins' as mixn;
+
+.checkbox-list {
+  @include mixn.flex-center(column, center);
+  gap: 10px;
+}
+
+.checkbox-item {
+  @include mixn.flex-center;
+  gap: 0.7rem;
+
+  &.check-item {
+    background-color: vars.$warning-bg;
+    color: vars.$warning-text;
+    border: 1px solid vars.$warning-border;
+  }
+}

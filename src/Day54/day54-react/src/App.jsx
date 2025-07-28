@@ -1,8 +1,5 @@
-import ButtonClsx from './components/clsxTest/ButtonClsx';
 import ClsxTest1 from './components/clsxTest/ClsxTest1';
-import TeamCard from './components/TeamCard/TeamCard';
-import TeamCard2 from './components/TeamCard2/TeamCard2';
-import members from './data/members';
+import TabNavigatie from './utils/TabNavigatie';
 
 function App() {
   return (
@@ -11,7 +8,8 @@ function App() {
         // <TeamCard key={member.id} name={member.name} role={member.role} image={member.image} />
         <TeamCard2 key={member.id} image={member.image} name={member.name} role={member.role} level={member.level} />
       ))} */}
-      <ClsxTest1 />
+      {/* <ClsxTest1 /> */}
+      <TabNavigatie />
     </>
   );
 }

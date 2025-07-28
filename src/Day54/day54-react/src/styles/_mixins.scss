@@ -10,10 +10,15 @@
   @include flex-center : 가로 방향(기본값)
   @incllude flex-center(column) : 원하는 방향
 */
-@mixin flex-center($direaction: row) {
+@mixin flex-center($direaction: row, $justifyContent: center) {
   display: flex;
   flex-direction: $direaction;
-  justify-content: center;
+  justify-content: $justifyContent;
   align-items: center;
   padding: vars.$padding-base;
+}
+
+@mixin list-flex() {
+  @include flex-center(row, space-between);
+  list-style: none;
 }

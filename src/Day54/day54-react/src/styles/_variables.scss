@@ -14,3 +14,28 @@ $card-width: 200px;
 $card-bg-color: #ccc;
 $card-transition-time: 0.2s;
 $card-hover-offset: 5px;
+
+// 경고 알람카드 색상 변수
+$info-bg: #e3f2fd;
+$info-border: #2196f3;
+$info-text: #1565c0;
+$info-icon: #2196f3;
+
+$success-bg: #e8f5e8;
+$success-border: #4caf50;
+$success-text: #2e7d32;
+$success-icon: #4caf50;
+
+$warning-bg: #fff3e0;
+$warning-border: #ff9800;
+$warning-text: #e65100;
+$warning-icon: #ff9800;
+
+$error-bg: #ffebee;
+$error-border: #f44336;
+$error-text: #c62828;
+$error-icon: #f44336;
+
+// 로딩 스타일 배경
+$loading-bg: #7b7b7b;
+$normal-bg: #efefef;

@@ -1,0 +1,32 @@
+@use '../../styles/variables' as vars;
+
+.base-card {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  margin: 1rem;
+
+  &.info {
+    background-color: vars.$info-bg;
+    border-color: vars.$info-border;
+    color: vars.$info-text;
+  }
+
+  &.success {
+    background-color: vars.$success-bg;
+    border-color: vars.$success-border;
+    color: vars.$success-text;
+  }
+
+  &.warning {
+    background-color: vars.$warning-bg;
+    border-color: vars.$warning-border;
+    color: vars.$warning-text;
+  }
+
+  &.error {
+    background-color: vars.$error-bg;
+    border-color: vars.$error-border;
+    color: vars.$error-text;
+  }
+}

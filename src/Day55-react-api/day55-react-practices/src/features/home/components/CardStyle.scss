@@ -1,0 +1,43 @@
+@use '../../../styles/mixins';
+@use '../../../styles/variables' as vars;
+
+.todo-card {
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  margin: 1rem;
+  position: relative; // badge 절대 위치 설정을 위해 추가
+
+  &.completed {
+    background-color: vars.$success-bg;
+    border-color: vars.$success-border;
+    color: vars.$success-text;
+  }
+  &.uncompleted {
+    background-color: vars.$error-bg;
+    border-color: vars.$error-border;
+    color: vars.$error-text;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  left: 0.5rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+
+  // 완료 상태일 때 배지 스타일
+  .completed & {
+    background-color: vars.$success-border;
+    color: white;
+  }
+
+  // 미완료 상태일 때 배지 스타일
+  .uncompleted & {
+    background-color: vars.$error-border;
+    color: white;
+  }
+}

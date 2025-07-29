@@ -57,6 +57,25 @@ export const store = configureStore({
 - createStore보다 간단하게 설정 가능
 - reducer, middleware 등의 설정을 포함하고 있음
 
+### 1-2. Main에 Provider 설정 (main.jsx)
+
+```jsx
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
+import { Provider } from 'react-redux';
+import { store } from './app/store.js';
+
+createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+```
+
+- 메인에 `store` Provider로 App을 감싸주어야 한다.
+
 ### 2. API 서비스 파일 생성 (postsApi.js)
 
 ```javascript

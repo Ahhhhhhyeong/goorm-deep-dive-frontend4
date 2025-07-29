@@ -1,0 +1,32 @@
+@use '../../styles/mixins';
+@use '../../styles/variables' as vars;
+
+.container {
+  margin: 0 auto;
+  width: 60%;
+  // height: 500px;
+}
+
+.tab-wapper {
+  @include mixins.list-flex;
+  border: vars.$card-boarder;
+
+  .tab-active {
+    background-color: vars.$primary-color;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.content {
+  padding: vars.$padding-base;
+  border: vars.$card-boarder;
+  min-height: 30rem;
+}
+
+.tab-button {
+  border: none;
+  background-color: initial;
+  padding: 0.8rem 1.1rem;
+  border-radius: 0.8rem;
+}

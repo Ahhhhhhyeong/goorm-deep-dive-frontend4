@@ -1,0 +1,16 @@
+@use '. /colors';
+
+.button {
+  background-color: colors.$primary-color;
+}
+.alert {
+  color: colors.$danger-color;
+}
+
+/*
+@use를 사용
+`@use '경로/파일명'`
+변수 = `파일명.$변수명`
+믹스인 = `@include 파일명.mixin()`
+함수 = `파일명.function()`
+*/

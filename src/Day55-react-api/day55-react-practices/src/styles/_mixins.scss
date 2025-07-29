@@ -1,0 +1,24 @@
+@use './variables.scss' as vars; // 공통변수 파일 호출
+
+/*
+자주쓰이는 스타일 함수
+예시
+  - flex를 가운데 정렬을 자주 써서 함수처럼 만드는 것
+
+기본적으로 가로방향이 됨.($direaction:row)
+@include 해서 호출할 때,
+  @include flex-center : 가로 방향(기본값)
+  @incllude flex-center(column) : 원하는 방향
+*/
+@mixin flex-center($direaction: row, $justifyContent: center) {
+  display: flex;
+  flex-direction: $direaction;
+  justify-content: $justifyContent;
+  align-items: center;
+  padding: vars.$padding-base;
+}
+
+@mixin list-flex() {
+  @include flex-center(row, space-between);
+  list-style: none;
+}

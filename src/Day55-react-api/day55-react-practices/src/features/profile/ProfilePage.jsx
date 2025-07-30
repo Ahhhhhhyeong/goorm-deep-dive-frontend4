@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactIcon from '../../assets/react.svg';
 import './Loading.scss';
 import clsx from 'clsx';
+import Loading from './components/Loading';
 
 export default function ProfilePage() {
   const [isLoading, setLoading] = useState(true);
@@ -15,11 +16,7 @@ export default function ProfilePage() {
           'normal-bg': !isLoading,
         })}>
         {/* 로딩 상태에 따라 SVG 표시 */}
-        {isLoading && (
-          <div className='loading-container'>
-            <img src={ReactIcon} alt='Loading...' className='loading-spinner' />
-          </div>
-        )}
+        {isLoading && <Loading />}
         <button onClick={() => setLoading(!isLoading)}>{isLoading ? '로딩 멈추기' : '로딩 시작하기'}</button>
       </div>
     </div>

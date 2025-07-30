@@ -29,6 +29,7 @@
   font-size: 12px;
   font-weight: bold;
 
+  // &를 뒤에 두면 부모 요소에 해당 클래스 네임이 있는지 확인
   // 완료 상태일 때 배지 스타일
   .completed & {
     background-color: vars.$success-border;

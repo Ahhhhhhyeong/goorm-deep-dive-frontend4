@@ -1,11 +1,12 @@
 import React from 'react';
 import { useGetTodosQuery } from './provider/todoApi';
 import Card from './components/Card';
+import Loading from '../profile/components/Loading';
 
 export default function HomePage() {
   const { data: todos, isLoading, isError } = useGetTodosQuery(1);
 
-  if (isLoading) return;
+  if (isLoading) return <Loading />;
   if (isError) return <p>오류 발생!</p>;
 
   return (

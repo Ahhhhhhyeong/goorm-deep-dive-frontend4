@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -19,8 +22,24 @@
   }
 }
 
+/* 폰트 클래스 정의 */
+.font-geist-sans {
+  font-family: var(--font-geist-sans);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: var(--font-geist-sans);
+}
+
+/* 코드 요소는 모노폰트 */
+code,
+pre {
+  font-family: var(--font-geist-mono);
 }

@@ -6,7 +6,7 @@
 
 > 참조
 >
-> > 1: ['AWS S3 공부하기 사용자, 버킷 생성 - 벨로그'](https://velog.io/%40hinolog/AWS-S3-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0?utm_source=chatgpt.com)
+> > 1: ['AWS S3 공부하기 사용자, 버킷 생성 - 벨로그'](https://velog.io/@hinolog/AWS-S3-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0#1-aws-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%83%9D%EC%84%B1-)
 > >
 > > 2: ['AWS S3 생성하기 - 벨로그'](https://velog.io/%40gmlstjq123/AWS-S3-%EC%8B%A4%EC%8A%B5?utm_source=chatgpt.com)
 

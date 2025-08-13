@@ -64,26 +64,26 @@ export default function OrderAdminPage() {
         </thead>
         <tbody>
           {orders.map((order) => (
-            <Link href={'/admin/orders/{id}'} key={order.id}>
-              <tr>
-                <td className='p-2 border'>{order.id}</td>
-                <td className='p-2 border'>{order.user}</td>
-                <td className='p-2 border'>{order.product}</td>
-                <td className='p-2 border'>{order.quantity}</td>
-                <td className='p-2 border'>
-                  <select
-                    value={order.status}
-                    onChange={(e) => handleStatusChange(order.id, e.target.value)}
-                    className='border rounded px-2 py-1'>
-                    {statusOptions.map((status) => (
-                      <option key={status} value={status}>
-                        {status}
-                      </option>
-                    ))}
-                  </select>
-                </td>
-              </tr>
-            </Link>
+            <tr key={order.id}>
+              <td className='p-2 border'>{order.id}</td>
+              <td className='p-2 border'>{order.user}</td>
+              <td className='p-2 border'>
+                <Link href={`/admin/orders/${order.id}`}>{order.product}</Link>
+              </td>
+              <td className='p-2 border'>{order.quantity}</td>
+              <td className='p-2 border'>
+                <select
+                  value={order.status}
+                  onChange={(e) => handleStatusChange(order.id, e.target.value)}
+                  className='border rounded px-2 py-1'>
+                  {statusOptions.map((status) => (
+                    <option key={status} value={status}>
+                      {status}
+                    </option>
+                  ))}
+                </select>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>

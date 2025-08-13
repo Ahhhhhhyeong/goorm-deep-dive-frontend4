@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 export default function AdminAddproduct() {
+  const [file, setFile] = useState(null);
   const [form, setForm] = useState({
     id: '',
     name: '',
@@ -18,7 +19,19 @@ export default function AdminAddproduct() {
     e.preventDefault();
     console.log(form);
 
+    const formData = new FormData();
+    formData.append('file', file);
+
     try {
+      // 이미지 AWS 저장 후, URL 받아 저장해야함
+      // file upload
+      const res = await axios.post('/api/admin/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log(res.data);
+      setForm({ ...form, image: res.data });
       await axios.post('/api/admin/addproduct', form, {
         headers: { 'Content-Type': 'application/json' },
       });
@@ -108,19 +121,19 @@ export default function AdminAddproduct() {
         <div>
           <label className='block text-sm font-medium mb-1'>이미지 URL</label>
           <input
+            type='file'
             name='image'
-            placeholder='예: /Apeach.jpeg 또는 https://...'
-            value={form.image}
-            onChange={handleChange}
+            onChange={(e) => setFile(e.target.files[0])}
+            accept='image/*'
             className='w-full p-2 border rounded'
           />
-          {form.image && (
+          {/* {file && (
             <div className='mt-3'>
-              <p className='text-sm text-gray-500 mb-1'>미리보기</p>
-              {/* 외부 도메인은 next.config 이미지 도메인 허용 필요 */}
-              <img src={form.image} alt='미리보기' className='max-h-48 rounded border' />
+              <p className='text-sm text-gray-500 mb-1'>미리보기</p> */}
+          {/* 외부 도메인은 next.config 이미지 도메인 허용 필요 */}
+          {/* <img src={file} alt='미리보기' className='max-h-48 rounded border' />
             </div>
-          )}
+          )} */}
         </div>
 
         {error && <p className='text-red-500'>{error.message}</p>}

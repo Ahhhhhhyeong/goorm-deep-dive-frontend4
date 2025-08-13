@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
@@ -32,14 +33,21 @@ export default function AdminDashboard() {
       <h1 className='text-2xl font-bold mb-4'>관리자 대시보드</h1>
       <ul className='space-y-2'>
         <li>
-          <a href='/admin/products' className='text-blue-600 underline'>
+          <Link href='/admin/products' className='text-blue-600 underline'>
             상품 관리
-          </a>
-          <br />
-          <a href='/admin/addproduct' className='text-blue-600 underline'>
-            상품 추가
-          </a>
+          </Link>
         </li>
+        <li>
+          <Link href='/admin/addproduct' className='text-blue-600 underline'>
+            상품 추가
+          </Link>
+        </li>
+        <li>
+          <Link href='/admin/orders' className='text-blue-600 underline'>
+            주문/배송 조회
+          </Link>
+        </li>
+
         <button
           className='rounded bg-blue-200 p-2 mt-4'
           onClick={() => {

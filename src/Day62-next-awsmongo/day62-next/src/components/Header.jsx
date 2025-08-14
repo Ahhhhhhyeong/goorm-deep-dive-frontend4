@@ -9,7 +9,7 @@ export default function Header() {
         </Link>
         <div className='space-x-4'>
           <Link href='/'>Home</Link>
-          <Link href='/products'>Product</Link>
+          <Link href='/user/products'>Product</Link>
         </div>
       </nav>
     </header>

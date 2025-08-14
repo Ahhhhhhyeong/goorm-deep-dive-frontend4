@@ -3,26 +3,27 @@ import React, { useEffect, useState } from 'react';
 
 export default function ProblemTwo() {
   const [result, setResult] = useState(null);
-  const [input, setInput] = useState('10,2');
+  const [input, setInput] = useState('70,50,80,50');
   //cdcd = 0
   useEffect(() => {
-    const color = input.split(',');
-    console.log(color);
-    const answer = solution(Number(color[0]), Number(color[1]));
+    const people = input.split(',');
+    console.log(people);
+    const answer = solution(people, 100);
     setResult(answer);
   }, [input]);
 
-  function solution(brown, yellow) {
-    let answer = [];
-    let total = brown + yellow;
-    // total의 약수 쌍
-    for (let i = 3; i <= total; i++) {
-      if (total % i !== 0) continue;
-      const j = total / i;
-      if (i < j) continue;
-      if ((i - 2) * (j - 2) === yellow) {
-        return [i, j];
+  function solution(people, limit) {
+    let answer = 0;
+    //오름차순 정렬
+    people.sort((a, b) => a - b);
+    let left = 0;
+    let right = people.length - 1;
+    while (left <= right) {
+      if (people[left] + people[right] <= limit) {
+        left++;
       }
+      right--;
+      answer++;
     }
     return answer;
   }

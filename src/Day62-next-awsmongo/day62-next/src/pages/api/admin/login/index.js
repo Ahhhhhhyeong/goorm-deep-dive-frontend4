@@ -12,6 +12,12 @@ export default function loginHandler(req, res) {
   const ADMIN_PW = 'admin12!@';
 
   if (username === ADMIN_ID && password === ADMIN_PW) {
+    /** 쿠키 설정
+     * HTTP 헤더에 직접 작성
+     * => 라이브러리 불필요
+     */
+    res.setHeader('Set-Cookie', 'authToken=admin_token;HttpOnly; Path=/;Max-Age=3600');
+
     return res.status(200).json({ message: '로그인 성공' });
   }
 

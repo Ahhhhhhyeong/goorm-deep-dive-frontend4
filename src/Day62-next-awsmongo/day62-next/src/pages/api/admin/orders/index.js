@@ -3,6 +3,13 @@
 import { mockOrders } from './mockOrder';
 
 export default async function handler(req, res) {
+  // 관리자 인증과 주문 데이터 관리를 동시에 처리하기 위해서 사용
+  const token = req.cookies?.authToken;
+  if (token !== 'admin_token') {
+    // 관리자가 아니면 에러를 유발!
+    return res.status(401).json({ message: 'Unahtorized' });
+  }
+
   if (req.method === 'GET') {
     return res.status(200).json(mockOrders);
   } else if (req.method === 'PATCH') {

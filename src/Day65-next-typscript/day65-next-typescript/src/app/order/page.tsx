@@ -18,17 +18,17 @@ export default function OrderPage() {
   const orderList = [order1, order2, order3, order4];
 
   return (
-    <div className='grid grid-rows items-center justify-items-center '>
-      <div className='grid grid-rows items-center justify-items-center p-8 gap-8 border border-zinc-400 rounded'>
-        <h1 className='font-bold text-2xl '>주문 내역</h1>
-        <table>
+    <div className='grid grid-rows items-center justify-items-center pt-8'>
+      <div className='grid grid-rows items-center justify-items-center gap-8 pb-8 border border-zinc-400 rounded'>
+        <h1 className='font-bold text-2xl pt-8'>주문 내역</h1>
+        <table className='w-full table-auto border-collapse border border-gray-200'>
           <thead>
-            <tr>
-              <th>주문번호</th>
-              <th>상품명</th>
-              <th>수량</th>
-              <th>가격</th>
-              <th>배송상태</th>
+            <tr className='bg-gray-100'>
+              <th className='p-2 border border-gray-200 text-center'>주문번호</th>
+              <th className='p-2 border border-gray-200 text-center'>상품명</th>
+              <th className='p-2 border border-gray-200 text-center'>수량</th>
+              <th className='p-2 border border-gray-200 text-center'>가격</th>
+              <th className='p-2 border border-gray-200 text-center'>배송상태</th>
             </tr>
           </thead>
           <tbody>

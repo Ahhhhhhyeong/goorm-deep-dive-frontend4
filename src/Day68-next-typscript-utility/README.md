@@ -196,3 +196,64 @@ type FullUserData = Required<UserData>;
 - (지난 수업에서 다룸)
 
 ---
+
+# Zod 검증 라이브러리
+
+## 1️⃣ Zod란?
+
+- 런타임에서 데이터 스키마를 선언하고 검증할 수 있는 라이브러리
+- 동시에 **TypeScript 타입을 추론**할 수 있음
+- TypeScript는 **컴파일 타임**만 안전하지만, Zod를 사용하면 런타임에서도 데이터 안전성을 보장 가능
+- 주로 JSON, 요청 바디, 환경변수, 폼 값 등 외부 데이터를 검증할 때 사용
+
+### 설치
+
+```bash
+npm install zod
+```
+
+---
+
+## 2️⃣ 기본 사용 예제
+
+```ts
+import { z } from 'zod';
+
+export default function Page() {
+  // 사용자 입력 규칙 선언
+  const UserInput = z.object({
+    // 이름: 문자열, 최소 1글자
+    name: z.string().min(1, '최소 한 글자 이상 작성해주세요'),
+
+    // 나이: 숫자, 정수, 0 이상
+    age: z
+      .number()
+      .int() // 정수만 허용
+      .nonnegative(),
+
+    // 이메일: 정규표현식으로 형식 검증
+    email: z.string().regex(/^[^@]+@[^@]+\.[^@]+$/, '이메일 형식이 아닙니다.'),
+    // 참고: 예전 버전에서는 z.string().email({message: ''}) 사용 가능
+  });
+
+  return (
+    <div>
+      <h1>Zod 외부라이브러리 실습</h1>
+    </div>
+  );
+}
+```
+
+---
+
+## 3️⃣ 주요 포인트
+
+- `z.object({...})` : 객체 형태의 데이터 스키마 정의
+- `z.string()` : 문자열 타입
+- `min(length, message)` : 최소 글자수 지정
+- `z.number()` : 숫자 타입
+- `.int()` : 정수만 허용
+- `.nonnegative()` : 0 이상만 허용
+- `regex(pattern, message)` : 정규식 검증
+
+---
